@@ -1,0 +1,58 @@
+﻿<div id="loadingIndicator" class="loading-dots" style="display: none;">
+    <div></div><div></div><div></div>
+</div>
+
+<div class="small-chat-box fadeInRight animated">
+
+    <div class="heading" draggable="true">
+        <small class="chat-date float-right">
+            @DateTime.Now.ToString("dd.MM.yyyy")
+        </small>
+        AI Support Chat (24/7)
+    </div>
+
+    <div id="chatContent" class="content">
+ @*            
+        <!-- Button to trigger previous conversations -->
+        <div id="previousConversationsBtn">
+            <div class="center">
+                <button class="btn btn-secondary">
+                    Previous conversations
+                </button>
+            </div>
+        </div> 
+*@
+       
+@*         
+        <div class="left">
+            <div class="author-name">
+                Support Staff #2 wrote on <small class="chat-date">@DateTime.Now.ToString("MM.dd.yyyy, HH:mm:ss")</small></small>
+            </div>
+            <div class="chat-message active">
+                How can I assist you today with Codis365?
+            </div>
+        </div>
+*@    
+
+    </div>
+
+    <div class="form-chat">
+        <div class="input-group input-group-sm" style="align-items: center; gap: 5px;">
+            <input id="messageText" type="text" class="form-control"> <span class="input-group-btn">
+                <button id="sendMessageBtn" class="btn btn-primary" type="button">
+                    Send
+                </button>
+            </span>
+        </div>
+    </div>
+
+</div>
+
+<div id="small-chat">
+    <span id="badgeNumber" class="badge badge-warning float-right"></span>
+    <a id="chatSupport" href="" class="open-small-chat">
+        <i class="fa fa-comments"></i>
+    </a>
+</div>
+
+<audio id="messageChatSoundIn" src="~/sounds/sound_in.wav" preload="auto"></audio>

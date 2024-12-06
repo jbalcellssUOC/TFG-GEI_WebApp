@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Configurations>Debug;Release;Deploy-ExternalAPI</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591;DV2001;DV2002</NoWarn>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <UserSecretsId>753dfb0a-61cb-4924-8095-2d4e7deb66dc</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Deploy-ExternalAPI|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+    <PackageReference Include="Microsoft.DependencyValidation.Analyzers" Version="0.11.0" />
+    <PackageReference Include="NLog" Version="5.3.4" />
+    <PackageReference Include="NLog.Database" Version="5.3.4" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="5.3.15" />
+    <PackageReference Include="NLog.MailKit" Version="5.3.0" />
+    <PackageReference Include="NLog.Schema" Version="5.3.4" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.15" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.1.0" />
+    <PackageReference Include="Unchase.Swashbuckle.AspNetCore.Extensions" Version="2.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Filters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4apidocs_4ui_4swagger-ui-standalone-preset_1js_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(BuildingInsideVisualStudio)' == 'true'">
+    <Exec Command="if $(Configuration) == Deploy-ExternalAPI cmd /c del &quot;$(ProjectDir)/Deploy\BusinessLogicLayer.zip&quot; /Q&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI cmd /c del &quot;$(ProjectDir)/Deploy\DataAccessLayer.zip&quot; /Q&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI cmd /c del &quot;$(ProjectDir)/Deploy\Entities.zip&quot; /Q&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI cmd /c del &quot;$(ProjectDir)/Deploy\Resources.zip&quot; /Q&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI cmd /c del &quot;$(ProjectDir)/Deploy\$(ProjectName).zip&quot; /Q&#xD;&#xA;&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI &quot;C:\Program Files\7-Zip\7z.exe&quot; -xr@Deploy/ignorelist.txt a -tzip &quot;Deploy\BusinessLogicLayer.zip&quot; &quot;$(SolutionDir)\BusinessLogicLayer\*&quot;&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI &quot;C:\Program Files\7-Zip\7z.exe&quot; -xr@Deploy/ignorelist.txt a -tzip &quot;Deploy\DataAccessLayer.zip&quot; &quot;$(SolutionDir)\DataAccessLayer\*&quot;&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI &quot;C:\Program Files\7-Zip\7z.exe&quot; -xr@Deploy\ignorelist.txt a -tzip &quot;Deploy\Entities.zip&quot; &quot;$(SolutionDir)\Entities\*&quot;&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI &quot;C:\Program Files\7-Zip\7z.exe&quot; -xr@Deploy\ignorelist.txt a -tzip &quot;Deploy\Resources.zip&quot; &quot;$(SolutionDir)\Resources\*&quot;&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI &quot;C:\Program Files\7-Zip\7z.exe&quot; -xr@Deploy/ignorelist.txt a -tzip &quot;Deploy/$(ProjectName).zip&quot; &quot;*&quot;&#xD;&#xA;&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI psftp root@79.143.89.216 -P 43522 -b Deploy/host_upload.txt -i Deploy/uoctfg.ppk&#xD;&#xA;if $(Configuration) == Deploy-ExternalAPI plink -batch -ssh root@79.143.89.216 -P 43522 -i Deploy/uoctfg.ppk -m Deploy/host_remotecmd.txt&#xD;&#xA;" />
+  </Target>
+
+</Project>

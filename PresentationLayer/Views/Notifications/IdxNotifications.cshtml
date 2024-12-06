@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "Security";
+}
+
+<link rel="stylesheet" href="~/css/views/notifications.css" asp-append-version="true" />
+<script src="~/js/views/notifications.js" asp-append-version="true"></script>
+
+<div class="row wrapper white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Security Overview</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Settings & Security</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Notifications</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+
+                    <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">Notification #</th>
+                                <th data-hide="from">From</th>
+                                <th data-hide="all">Description</th>
+                                <th data-hide="date">Received</th>
+                                <th data-hide="status">Status</th>
+                                <th class="text-right" data-sort-ignore="true">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="unread">
+                                <td>⚠️ Complete Your Profile Now!</td>
+                                <td>Codis365</td>
+                                <td>
+                                    <p>
+                                        Welcome to our community! To make the most out of your experience and unlock all the features we have to offer, we need just a little more information from you. Complete your profile now to access exclusive content, personalized recommendations, and more. Let’s get started!
+                                    </p>
+                                    <p>We're excited to see what you achieve with full access! If you need any help along the way, our support team is just a click away.</p>
+                                    <p>Best regards,<br />The Codis365 Services Team</p>
+                                </td>
+                                <td>
+                                    <span class="label label-primary statusBGUnread">2024-05-14, 19:36</span>
+                                </td>
+                                <td>
+                                    <span class="label label-primary status statusBGUnread">Unread</span>
+                                </td>
+                                <td class="text-right">
+                                      <a href="#" title="Mark as read"><i class="fa fa-book text-navy statusColorUnread"></i></a>
+                                      <a href="#" tiltle = "Delete"><i class="fa fa-close text-navy statusColorUnread"></i></a>
+                                </td>
+                            </tr>
+                            <tr class="unread">
+                                <td>👋 Complete Your Profile to Unlock Full Benefits!</td>
+                                <td>Codis365</td>
+                                <td>
+                                    <p>
+                                        Welcome to our community! To make the most out of your experience and unlock all the features we have to offer, we need just a little more information from you. Complete your profile now to access exclusive content, personalized recommendations, and more. Let’s get started!
+                                    </p>
+                                    <p>We're excited to see what you achieve with full access! If you need any help along the way, our support team is just a click away.</p>
+                                    <p>Best regards,<br />The Codis365 Services Team</p>
+                                </td>
+                                <td>
+                                    <span class="label label-primary statusBGUnread">2024-05-12, 14:36</span>
+                                </td>
+                                <td>
+                                    <span class="label label-primary status statusBGUnread">Unread</span>
+                                </td>
+                                <td class="text-right">
+                                      <a href="#" title="Mark as read"><i class="fa fa-book text-navy statusColorUnread"></i></a>
+                                      <a href="#" tiltle = "Delete"><i class="fa fa-close text-navy statusColorUnread"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>🌟Welcome to Codis365 Services – Your Journey Begins Here!</td>
+                                <td>Codis365</td>
+                                <td>
+                                    <p>
+                                    Hello and thank you for choosing Codis365 Services! We're excited to have you onboard and are looking forward to helping you achieve your goals with our cutting-edge solutions. Whether you're looking to enhance your operations, streamline processes, or boost efficiency, our dedicated team is here to support you every step of the way.
+                                    As a Codis365 client, you have access to our suite of innovative services and a support team that genuinely cares about your success. Explore our range of offerings and do not hesitate to reach out with any questions or to request personalized assistance.
+                                    </p>
+                                    <p>Thank you for trusting us. Let’s make great things happen together!</p>
+                                    <p>Best regards,<br />The Codis365 Services Team</p>
+                                </td>
+                                <td>
+                                    <span class="label label-primary">2024-05-10, 18:36</span>
+                                </td>
+                                <td>
+                                    <span class="label label-primary status">Read</span>
+                                </td>
+                                <td class="text-right">
+                                      <a href="#" title="Mark as unread"><i class="fa fa-check text-navy"></i></a>
+                                      <a href="#" tiltle = "Delete"><i class="fa fa-close text-navy"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <ul class="pagination float-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/inspinia/lib/footable/css/footable.core.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/inspinia/lib/footable/css/footable.core.min.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/inspinia/lib/footable/dist/footable.all.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.footable').footable();
+
+        });
+    </script>
+}

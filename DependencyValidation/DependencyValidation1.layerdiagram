@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dbd9d045-9a4d-453a-a1c0-3a98f22c55b2" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="e46fcd53-0396-494b-ad2b-8a5b5652e40c" name="BusinessLogicLayer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="db0119b9-e95c-4c1f-81f2-c36f63c9569e" direction="Bidirectional">
+          <layerMoniker Id="c9fb3b40-f370-4392-98d8-83fb1874a83f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="5cad8743-10dc-4984-98ac-79e92f6d5fe6" name="Hubs">
+          <references>
+            <reference Id="a7f5ce7d-4f5a-455b-9760-9b4078bb9be4" name="Hubs">
+              <ArtifactNode Label="Hubs" Category="CodeSchema_ProjectItem" Id="(Assembly=../BusinessLogicLayer/BusinessLogicLayer.csproj File=../BusinessLogicLayer/Hubs/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=SecurityHubs.Hubs Type=SecurityHub)" Label="SecurityHub" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="3ab4adfa-2148-4d3d-b4ad-cc3cc57285eb" name="Services">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="9494d1bc-6427-474a-ab6a-1271c99cf757" direction="Bidirectional">
+              <layerMoniker Id="ae9c3aa5-38ca-4cc1-baf4-2f14af93725b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="cfd5c48f-1b37-4599-a221-312a9367ec73" name="Services">
+              <ArtifactNode Label="Services" Category="CodeSchema_ProjectItem" Id="(Assembly=../BusinessLogicLayer/BusinessLogicLayer.csproj File=../BusinessLogicLayer/Services/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Services Type=AuthService)" Label="AuthService" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Services Type=EncryptionService)" Label="EncryptionService" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Services Type=NotificationService)" Label="NotificationService" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Services Type=ProductService)" Label="ProductService" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Services Type=UserDDService)" Label="UserDDService" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="8e5d657e-bc8a-4e6d-b77e-64e293737551" name="Classes">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="3ea90868-b9fe-46e8-8db8-cfd33cdfede8" direction="Bidirectional">
+              <layerMoniker Id="3ab4adfa-2148-4d3d-b4ad-cc3cc57285eb" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="dafb8f4c-f6e6-4ccd-8fe1-049036c01001" direction="Bidirectional">
+              <layerMoniker Id="ae9c3aa5-38ca-4cc1-baf4-2f14af93725b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="563aadef-3eaa-4528-8142-cc3b0e1527be" name="Classes">
+              <ArtifactNode Label="Classes" Category="CodeSchema_ProjectItem" Id="(Assembly=../BusinessLogicLayer/BusinessLogicLayer.csproj File=../BusinessLogicLayer/Classes/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Classes Type=BLInjectionExtensions)" Label="BLInjectionExtensions" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Classes Type=BLServiceCollection)" Label="BLServiceCollection" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="ae9c3aa5-38ca-4cc1-baf4-2f14af93725b" name="Interfaces">
+          <references>
+            <reference Id="bea4d61c-4996-4705-993a-5ee9c9d6a6a5" name="Interfaces">
+              <ArtifactNode Label="Interfaces" Category="CodeSchema_ProjectItem" Id="(Assembly=../BusinessLogicLayer/BusinessLogicLayer.csproj File=../BusinessLogicLayer/Interfaces/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Interfaces Type=IAuthService)" Label="IAuthService" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Interfaces Type=IEncryptionService)" Label="IEncryptionService" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Interfaces Type=INotificationService)" Label="INotificationService" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=BusinessLogicLayer Namespace=BusinessLogicLayer.Interfaces Type=IUserDDService)" Label="IUserDDService" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="50bbafa4-5a00-41be-a1a7-3e9c3d22f65f" name="BusinessLogicLayer">
+          <ArtifactNode Label="BusinessLogicLayer" Category="CodeSchema_Project" Id="(Assembly=../BusinessLogicLayer/BusinessLogicLayer.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="c9fb3b40-f370-4392-98d8-83fb1874a83f" name="DataAccessLayer">
+      <childLayers>
+        <layer Id="67880bf3-3a22-449e-916d-5fa727883b09" name="Repositories">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="c6a7211c-95d9-4464-ac11-855b37bc732e" direction="Forward">
+              <layerMoniker Id="41e72c08-ef41-4ff6-8067-ba996a8aebc8" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="e2cb9c93-8642-4cc5-9648-1c0c6abee7aa" direction="Bidirectional">
+              <layerMoniker Id="0670dab8-4dac-4152-8c43-b4326188a9fe" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="edf39b6f-8a04-4ad7-86e4-a2a6acc5b8a0" direction="Bidirectional">
+              <layerMoniker Id="1e6651c5-ef56-4802-bf94-756029599a5e" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="64121cec-dff1-4047-a937-c664ed666424" direction="Bidirectional">
+              <layerMoniker Id="d77b62a1-4588-4550-b66f-662920df23a7" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="9f726dc7-e1d5-42ed-8b5d-742172f95476" name="Repositories">
+              <ArtifactNode Label="Repositories" Category="CodeSchema_ProjectItem" Id="(Assembly=../DataAccessLayer/DataAccessLayer.csproj File=../DataAccessLayer/Repositories/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DataAccessLayer Namespace=DataAccessLayer.Repositories Type=ProductRepository)" Label="ProductRepository" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=DataAccessLayer Namespace=DataAccessLayer.Repositories Type=UserRepository)" Label="UserRepository" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="41e72c08-ef41-4ff6-8067-ba996a8aebc8" name="Interfaces">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="1bd7a827-91e8-4e1a-b385-0befc9de52ad" direction="Bidirectional">
+              <layerMoniker Id="1e6651c5-ef56-4802-bf94-756029599a5e" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="df11a533-7a2a-42fe-abc0-1341226ea741" direction="Forward">
+              <layerMoniker Id="d77b62a1-4588-4550-b66f-662920df23a7" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="15e0d8f7-8561-46b2-9c70-07d99462fa4e" name="Interfaces">
+              <ArtifactNode Label="Interfaces" Category="CodeSchema_ProjectItem" Id="(Assembly=../DataAccessLayer/DataAccessLayer.csproj File=../DataAccessLayer/Interfaces/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DataAccessLayer Namespace=DataAccessLayer.Interfaces Type=IProductRepository)" Label="IProductRepository" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=DataAccessLayer Namespace=DataAccessLayer.Interfaces Type=IUserRepository)" Label="IUserRepository" Category="CodeSchema_Interface">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="e5577269-90f1-4d5e-95b1-80ae369a7282" name="Classes">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="83f60878-e493-4a65-9e31-539dcc6e17e8" direction="Bidirectional">
+              <layerMoniker Id="41e72c08-ef41-4ff6-8067-ba996a8aebc8" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="6f306ea6-68b0-4327-9267-a12e7c48c926" direction="Bidirectional">
+              <layerMoniker Id="67880bf3-3a22-449e-916d-5fa727883b09" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="250919f8-14ac-4f26-9ab2-cd67f79edab0" name="Classes">
+              <ArtifactNode Label="Classes" Category="CodeSchema_ProjectItem" Id="(Assembly=../DataAccessLayer/DataAccessLayer.csproj File=../DataAccessLayer/Classes/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=DataAccessLayer Namespace=DataAccessLayer.Classes Type=DALInjectionExtensions)" Label="DALInjectionExtensions" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="6267b619-9987-4916-b709-3da6365efffa" name="DataAccessLayer">
+          <ArtifactNode Label="DataAccessLayer" Category="CodeSchema_Project" Id="(Assembly=../DataAccessLayer/DataAccessLayer.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="7f6ac85f-c184-495e-a96b-0e1238b4d8a5" name="Tests">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c00e47ec-5753-46f6-89c0-59089ca163bd" direction="Bidirectional">
+          <layerMoniker Id="df330f3d-57ff-4777-a643-c5b4909df1ea" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="506b0d18-82e0-4c94-a01a-d48315c3dc81" direction="Bidirectional">
+          <layerMoniker Id="e46fcd53-0396-494b-ad2b-8a5b5652e40c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ecc6b0a0-5c6d-474f-b9cf-8119ddc5f33a" direction="Forward">
+          <layerMoniker Id="c9fb3b40-f370-4392-98d8-83fb1874a83f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="836610d0-4a76-4fc8-9ce9-beb39711e95a" name="Tests">
+          <ArtifactNode Label="Tests" Category="CodeSchema_Project" Id="(Assembly=../Tests/Tests.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="df330f3d-57ff-4777-a643-c5b4909df1ea" name="PresentationLayer">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f6fee9f3-44fc-4d1a-bd29-9a52afa47f56" direction="Bidirectional">
+          <layerMoniker Id="e46fcd53-0396-494b-ad2b-8a5b5652e40c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="3f72132c-dcc1-4931-8257-53386874ccf4" direction="Bidirectional">
+          <layerMoniker Id="ac84f7ad-6640-469f-8a33-7f4d045290ac" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="194baa40-d39c-4808-bf24-1dcda7e3240b" name="PresentationLayer">
+          <ArtifactNode Label="PresentationLayer" Category="CodeSchema_Project" Id="(Assembly=../PresentationLayer/PresentationLayer.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="71d2cc2e-821e-4e23-b114-a593035c5194" name="ExternalAPI">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="811a46d3-6c71-41eb-a275-0d9bba593683" direction="Bidirectional">
+          <layerMoniker Id="e46fcd53-0396-494b-ad2b-8a5b5652e40c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="8a16c9a5-bf06-4238-a727-4523f36a36fd" direction="Bidirectional">
+          <layerMoniker Id="c9fb3b40-f370-4392-98d8-83fb1874a83f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="c65dda69-86de-4e01-a2b0-7cb05875343b" name="Controllers">
+          <references>
+            <reference Id="e0781a9a-053b-4726-8fcb-87efe4987d27" name="Controllers">
+              <ArtifactNode Label="Controllers" Category="CodeSchema_ProjectItem" Id="(Assembly=../ExternalAPI/ExternalAPI.csproj File=../ExternalAPI/Controllers/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="2cae4c58-16fc-4284-b3fa-6606125def4f" name="ExternalAPI">
+          <ArtifactNode Label="ExternalAPI" Category="CodeSchema_Project" Id="(Assembly=../ExternalAPI/ExternalAPI.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="ebceb27a-8aa5-4710-a74c-5a6336e45d35" name="Resources">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="79f50f01-6e7c-41e4-8dab-93b4416adf59" direction="Bidirectional">
+          <layerMoniker Id="df330f3d-57ff-4777-a643-c5b4909df1ea" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="6b7c385c-a993-42af-9599-352bc2998353" direction="Bidirectional">
+          <layerMoniker Id="e46fcd53-0396-494b-ad2b-8a5b5652e40c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="491c1ab8-63c6-45ee-aa13-159555eba96a" direction="Bidirectional">
+          <layerMoniker Id="c9fb3b40-f370-4392-98d8-83fb1874a83f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a7540b86-74a9-44a4-8051-2fe67774c994" direction="Bidirectional">
+          <layerMoniker Id="71d2cc2e-821e-4e23-b114-a593035c5194" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="bb0b5d11-89de-44e5-b2b6-1c8e484a775a" name="APIResources.cs">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="14133052-c9b5-4c11-9ac5-2d34f4409414" direction="Bidirectional">
+              <layerMoniker Id="71d2cc2e-821e-4e23-b114-a593035c5194" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="83dab712-82c6-4b2c-a645-1e2c7cd07173" direction="Bidirectional">
+              <layerMoniker Id="c65dda69-86de-4e01-a2b0-7cb05875343b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="8c7171bb-0f3d-441e-b441-592635863072" name="APIResources.cs">
+              <ArtifactNode Label="APIResources.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../Resources/Resources.csproj File=../Resources/APIResources.cs)">
+                <Category Ref="File" />
+              </ArtifactNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="aebb83af-87bf-4c3a-b56f-aaa77cb85e5d" name="BasicResources.cs">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="613d94e1-e3ad-4256-ad1a-26e964eda807" direction="Bidirectional">
+              <layerMoniker Id="df330f3d-57ff-4777-a643-c5b4909df1ea" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="5ff02b87-9c8c-4fbf-a60d-166935feeebc" name="BasicResources.cs">
+              <ArtifactNode Label="BasicResources.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../Resources/Resources.csproj File=../Resources/BasicResources.cs)">
+                <Category Ref="File" />
+              </ArtifactNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="0f69f518-6aa6-434b-8cd3-03f634c06142" name="Resources">
+          <ArtifactNode Label="Resources" Category="CodeSchema_Project" Id="(Assembly=../Resources/Resources.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="ac84f7ad-6640-469f-8a33-7f4d045290ac" name="Entities">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6a3e2a53-520a-4131-b881-bb4b9a981925" direction="Bidirectional">
+          <layerMoniker Id="e46fcd53-0396-494b-ad2b-8a5b5652e40c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="0670dab8-4dac-4152-8c43-b4326188a9fe" name="Data">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="07bcd8b7-9367-4db9-9c57-46fd05e48288" direction="Bidirectional">
+              <layerMoniker Id="1e6651c5-ef56-4802-bf94-756029599a5e" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="f6ff6ad3-4758-4f23-ab09-e4a681bba23e" name="Data">
+              <ArtifactNode Label="Data" Category="CodeSchema_ProjectItem" Id="(Assembly=../Entities/Entities.csproj File=../Entities/Data/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Data Type=BBDDContext)" Label="BBDDContext" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="d77b62a1-4588-4550-b66f-662920df23a7" name="DTOs">
+          <references>
+            <reference Id="43782a47-e928-42b6-880e-4c61630b3a71" name="DTOs">
+              <ArtifactNode Label="DTOs" Category="CodeSchema_ProjectItem" Id="(Assembly=../Entities/Entities.csproj File=../Entities/DTOs/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.DTOs Type=LoginUserDTO)" Label="LoginUserDTO" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.DTOs Type=UserDDDTO)" Label="UserDDDTO" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.DTOs Type=UserDTO)" Label="UserDTO" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="c3ca1e76-4816-4191-9d4a-f1ded5d9c13b" name="Enums">
+          <references>
+            <reference Id="35843285-2609-4019-a038-e034a3649502" name="Enums">
+              <ArtifactNode Label="Enums" Category="CodeSchema_ProjectItem" Id="(Assembly=../Entities/Entities.csproj File=../Entities/Enums/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="1e6651c5-ef56-4802-bf94-756029599a5e" name="Models">
+          <references>
+            <reference Id="cfb283e4-2a2f-4c73-980c-cb207ee5b53a" name="Models">
+              <ArtifactNode Label="Models" Category="CodeSchema_ProjectItem" Id="(Assembly=../Entities/Entities.csproj File=../Entities/Models/)">
+                <Category Ref="ProjectFolder" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=AppLogger)" Label="AppLogger" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=AppProduct)" Label="AppProduct" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=AppUser)" Label="AppUser" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=AppUsersRole)" Label="AppUsersRole" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=AppUsersStat)" Label="AppUsersStat" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=SysActionType)" Label="SysActionType" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=SysCodeType)" Label="SysCodeType" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=SysLogger)" Label="SysLogger" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=SysRole)" Label="SysRole" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+              <ExpandedNode Id="(Assembly=Entities Namespace=Entities.Models Type=SysValue)" Label="SysValue" Category="CodeSchema_Class">
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="2b00fd8b-9fff-4a8a-a8eb-fc36078c6e3a" name="Entities">
+          <ArtifactNode Label="Entities" Category="CodeSchema_Project" Id="(Assembly=../Entities/Entities.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

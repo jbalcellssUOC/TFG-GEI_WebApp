@@ -1,0 +1,52 @@
+.swagger-ui .topbar {
+    background-color: #000;
+    border-bottom: 3px solid #547f00;
+}
+
+.opblock .opblock-summary-description {
+    font-family: Roboto !important;
+    font-size: 15px !important;
+}
+
+.swagger-ui img {
+    display: none !important;
+}
+
+.info__contact .link {
+    display: none!important;
+}
+
+.description p {
+    font-family: Roboto !important;
+    font-size: 18px !important;
+    text-align: justify !important;
+}
+
+.info__tos a{
+    font-family: Roboto !important;
+    font-size: 18px !important;
+}
+
+.info__license a{
+    font-family: Roboto !important;
+    font-size: 18px !important;
+}
+
+.microlight{
+
+}
+
+.swagger-ui .auth-container input[type="password"], .swagger-ui .auth-container input[type="text"] {
+    min-width: 100%;
+}
+
+.renderedMarkdown p {
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    padding-bottom: 15px;
+    text-align: justify;
+}
+
+.hzUya p{
+    background-color: blue!important;
+}
