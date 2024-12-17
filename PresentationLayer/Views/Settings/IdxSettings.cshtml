@@ -2,7 +2,7 @@
 @model DashboardUserProfileDTO;
 
 @{
-    ViewData["Title"] = "App Settings";
+    ViewData["Title"] = @Localizer["settings.Title"];
     Random rand = new Random();
     int productsCount = rand.Next(100, 200); 
     int qrReadingsCount = rand.Next(1000, 5000); 
@@ -14,16 +14,16 @@
 
 <div class="row wrapper white-bg page-heading">
     <div class="col-lg-12">
-        <h2>Settings Overview</h2>
+        <h2>@Localizer["settings.SettingsOverview"]</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a>Settings & Security</a>
+                <a>@Localizer["settings.SettingsAndSecurity"]</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Settings</strong>
+                <strong>@Localizer["settings.Settings"]</strong>
             </li>
         </ol>
     </div>
@@ -46,18 +46,18 @@
                             @Model.UserName
                         </h2>
                         <h4>Email: <a href="#">@Model.UserLogin</a></h4>
-                        <h4>Profile Type: @Model.UserProfile</h4>
+                        <h4>@Localizer["settings.ProfileType"]@Model.UserProfile</h4>
 
                         @if (@Model.UserProfile == "Web User")
                         {
                             <small style="font-family: Montserrat">
-                                The <cite>"Web User"</cite> profile is designed for individuals who interact with Codis365 services primarily through a web interface. This profile caters to users who require access to our comprehensive suite of online tools for managing transactions efficiently.
+                                <cite>Web User, </cite>@Localizer["settings.WebUserProfile"]
                             </small>
                         }
                         else 
                         {
                             <small style="font-family: Montserrat">
-                                The <cite>"API User"</cite> profile is tailored for developers and technical teams who integrate and interact with Codis365 services programmatically through APIs. This profile enables advanced customization and automation capabilities.
+                                <cite>API User, </cite>@Localizer["settings.APIUserProfile"]
                             </small>
                         }
                     </div>
@@ -70,15 +70,15 @@
                 <tbody>
                     <tr>
                         <td>
-                            <strong>@productsCount.ToString("N0")</strong> Products
+                            <strong>@productsCount.ToString("N0")</strong>@Localizer["settings.Products"]
                         </td>
                         <td>
-                            <strong>@qrReadingsCount.ToString("N0")</strong> QR Readings
+                            <strong>@qrReadingsCount.ToString("N0")</strong>@Localizer["settings.QRReadings"]
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>@interactionsCount.ToString("N0")</strong> Interactions
+                            <strong>@interactionsCount.ToString("N0")</strong>@Localizer["settings.Interactions"] 
                         </td>
                         <td></td>
                     </tr>
@@ -91,15 +91,15 @@
         <div class="col-lg-5">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>User Profile</h5>
+                    <h5>@Localizer["settings.UserProfile"]</h5>
                 </div>
 
                 <div class="ibox-content">
                     <form role="form">
-                        <div class="form-group"><label>Name</label> <input type="" placeholder="@Model.UserName" class="form-control"></div>
-                        <div class="form-group"><label>Surname</label> <input type="" placeholder="" class="form-control"></div>
+                        <div class="form-group"><label>@Localizer["settings.Name"]</label> <input type="" placeholder="@Model.UserName" class="form-control"></div>
+                        <div class="form-group"><label>@Localizer["settings.Surname"]</label> <input type="" placeholder="" class="form-control"></div>
                         <div>
-                            <button class="btn btn-sm btn-primary float-right m-t-n-xs" type="submit"><strong>Save Data</strong></button>
+                            <button class="btn btn-sm btn-primary float-right m-t-n-xs" type="submit"><strong>@Localizer["settings.SaveData"]</strong></button>
                             <label>  </label>
                         </div>
                     </form>
@@ -110,7 +110,7 @@
         <div class="col-lg-7">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>GDPR Compliance Form</h5>
+                    <h5>@Localizer["settings.GRDP"]</h5>
                 </div>
                 <div class="ibox-content">
                     <form role="form">
@@ -118,13 +118,13 @@
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" value="" checked>
-                                    <small class="grdp">I consent to the processing of my personal data in accordance with the <strong>GDPR</strong> requirements.</small>
+                                    <small class="grdp">@Html.Raw(Localizer["settings.grdp1"])</small>
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" value="" checked>
-                                    <small class="grdp">I agree to receive marketing communications and <cite>promotional offers</cite>.</small>
+                                    <small class="grdp">@Html.Raw(Localizer["settings.grdp2"])</cite>.</small>
                                 </label>
                             </div>
                         </div>
@@ -140,33 +140,33 @@
             <div class="ibox ">
 
                 <div class="ibox-title">
-                    <h5>Aplications Settings</h5>
+                    <h5>@Localizer["settings.AplicationsSettings"]</h5>
                 </div>
                 <div class="ibox-content">
                     <div class="row">
                         <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
                             <thead>
                                 <tr>
-                                    <th data-toggle="true">Setting</th>
-                                    <th data-hide="description">Description</th>
-                                    <th data-hide="value">Value</th>
-                                    <th data-hide="lastu">Last Update</th>
-                                    <th data-hide="status">Status</th>
-                                    <th class="text-right" data-sort-ignore="true">Action</th>
+                                    <th data-toggle="true">@Localizer["settings.Setting"]</th>
+                                    <th data-hide="description">@Localizer["settings.Description"]</th>
+                                    <th data-hide="value">@Localizer["settings.Value"]</th>
+                                    <th data-hide="lastu">@Localizer["settings.LastUpdate"]</th>
+                                    <th data-hide="status">@Localizer["settings.Status"]</th>
+                                    <th class="text-right" data-sort-ignore="true">@Localizer["settings.Action"]</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>IdleTimeout</td>
-                                    <td>Refers to the time before a user's session is automatically terminated due to inactivity.</td>
+                                    <td>@Localizer["settings.IdleTimeout"]</td>
+                                    <td>@Localizer["settings.IdleTimeoutTxt"]</td>
                                     <td>
                                         30''
                                     </td>
                                     <td>
-                                        <span class="label label-primary">2024-05-02, 13:46</span>
+                                        <span class="label label-primary">2024-11-02, 13:46</span>
                                     </td>
                                     <td>
-                                        <span class="label label-primary">Active</span>
+                                        <span class="label label-primary">@Localizer["settings.Active"]</span>
                                     </td>
                                     <td class="text-right">
                                           <a href="#" title="Modify" ><i class="fa fa-edit text-navy"></i></a>
@@ -174,16 +174,16 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>NotificationEmail</td>
-                                    <td>Manage how and when you receive notifications via email from our application. Customize your preferences to stay informed about important updates, alerts, or events.</td>
+                                    <td>@Localizer["settings.NotificationEmail"]</td>
+                                    <td>@Localizer["settings.NotificationEmailTxt"]</td>
                                     <td>
                                         <a href="#"><i class="fa fa-check text-navy"></i></a>
                                     </td>
                                     <td>
-                                        <span class="label label-primary">2024-05-14, 19:28</span>
+                                        <span class="label label-primary">2024-10-14, 19:28</span>
                                     </td>
                                     <td>
-                                        <span class="label label-primary">Active</span>
+                                        <span class="label label-primary">@Localizer["settings.Active"]</span>
                                     </td>
                                     <td class="text-right">
                                           <a href="#" title="Modify" ><i class="fa fa-edit text-navy"></i></a>
@@ -191,16 +191,16 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>NotificationSMS</td>
-                                    <td>Stay updated with real-time alerts and notifications directly to your mobile device. Configure your SMS notification preferences to ensure you never miss critical information and updates from our application.</td>
+                                    <td>@Localizer["settings.NotificationSMS"]</td>
+                                    <td>@Localizer["settings.NotificationSMSTxt"]</td>
                                     <td>
                                         <a href="#"><i class="fa fa-window-close text-navy" style="color:red!important"></i></a>
                                     </td>
                                     <td>
-                                        <span class="label label-primary">2024-04-29, 11:34</span>
+                                        <span class="label label-primary">2024-10-29, 11:34</span>
                                     </td>
                                     <td>
-                                        <span class="label label-primary" style="background-color:red">Disabled</span>
+                                        <span class="label label-primary" style="background-color:red">@Localizer["settings.Disabled"]</span>
                                     </td>
                                     <td class="text-right">
                                           <a href="#" title="Modify" ><i class="fa fa-edit text-navy"></i></a>

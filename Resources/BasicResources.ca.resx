@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCOUNT_ERROR1" xml:space="preserve">
+    <value>No es pot crear l'usuari. L'usuari {0} ja existeix al sistema.</value>
+  </data>
+  <data name="ACCOUNT_ERROR2" xml:space="preserve">
+    <value>No es pot crear el compte per a {0}. Si us plau, consulteu amb el suport.</value>
+  </data>
+  <data name="LOGIN_ERROR1" xml:space="preserve">
+    <value>No s'ha pogut iniciar sessió, si us plau verifica les teves dades d'accés.</value>
+  </data>
+  <data name="LOGIN_ERROR2" xml:space="preserve">
+    <value>No s'ha pogut iniciar sessió, si us plau intenta-ho de nou més tard.</value>
+  </data>
+  <data name="LOGIN_ERROR3" xml:space="preserve">
+    <value>El teu compte ha estat bloquejat a causa de múltiples intents fallits d'inici de sessió. Si us plau, restableix la teva contrasenya per recuperar l'accés.</value>
+  </data>
+  <data name="login.LoginText" xml:space="preserve">
+    <value>Inici de sessió</value>
+  </data>
+  <data name="login.LoginButton" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="login.KeepSigned" xml:space="preserve">
+    <value>Manté la sessió activa</value>
+  </data>
+  <data name="login.ForgotPassword" xml:space="preserve">
+    <value>Recuperar contrasenya?</value>
+  </data>
+  <data name="login.CreateAccount" xml:space="preserve">
+    <value>Crea un compte per utilitzar els serveis de Codis365</value>
+  </data>
+  <data name="createAccount.Info" xml:space="preserve">
+    <value>Si us plau, proporcioneu un nom d'usuari nou i una contrasenya segura que compleixi amb les nostres polítiques de seguretat.</value>
+  </data>
+  <data name="createAccount.NoAccount" xml:space="preserve">
+    <value>El compte d'usuari per a &lt;strong&gt;{0}&lt;/strong&gt; existeix a Codis365. Ara pots crear un nou compte amb les dades mínimes i completar el teu perfil d'usuari més tard.</value>
+  </data>
+  <data name="createAccount.Provide" xml:space="preserve">
+    <value>Si us plau, proporciona un nom per al teu compte</value>
+  </data>
+  <data name="createAccount.InvalidEmail" xml:space="preserve">
+    <value>Adreça de correu electrònic no vàlida, si us plau, proporciona una adreça vàlida en el format: email@domini.com</value>
+  </data>
+  <data name="createAccount.ProvideValidEmail" xml:space="preserve">
+    <value>Si us plau, proporciona una adreça de correu electrònic vàlida en el format: email@domini.com</value>
+  </data>
+  <data name="createAccount.Pattern" xml:space="preserve">
+    <value>Introdueix una contrasenya vàlida amb el següent patró: Mínim 8 caràcters, 1 majúscula, 1 minúscula, 1 número i 1 caràcter especial.</value>
+  </data>
+  <data name="createAccount.PatternError" xml:space="preserve">
+    <value>La contrasenya ha de contenir almenys 8 caràcters, incloent 1 lletra majúscula, 1 lletra minúscula, 1 número i 1 caràcter especial.</value>
+  </data>
+  <data name="createAccount.License" xml:space="preserve">
+    <value>Termes i condicions de la llicència</value>
+  </data>
+  <data name="createAccount.License1" xml:space="preserve">
+    <value>S'atorga permís, de forma gratuïta, a qualsevol persona que obtingui una còpia d'aquest programari i dels fitxers de documentació associats (el "Programari"), per utilitzar el Programari sense restriccions, inclosos, entre altres, els drets d'ús, còpia, modificació, combinació, publicació, distribució, sublicència i/o venda de còpies del Programari, i per permetre que les persones a qui es lliura el Programari facin el mateix, subjecte a les següents condicions: L'avís de copyright anterior i aquest avís de permís s'hauran d'incloure en totes les còpies o parts substancials del Programari.</value>
+  </data>
+  <data name="createAccount.License2" xml:space="preserve">
+    <value>EL PROGRAMARI ES PROPORCIONA "TAL COM ÉS", SENSE CAP GARANTIA DE CAP TIPUS, EXPRESSA O IMPLÍCITA, INCLOSES, ENTRE ALTRES, LES GARANTIES DE COMERCIABILITAT, ADEQUACIÓ A UN PROPÒSIT PARTICULAR I NO INFRACCIÓ. EN CAP CAS ELS AUTORS O ELS TITULARS DELS DRETS D'AUTOR SERAN RESPONSABLES DE CAP RECLAMACIÓ, DANY O ALTRES RESPONSABILITATS, JA SIGUI EN UN CONTRACTE, PERJUDICI O D'ALTRA MANERA, DERIVADES DE, O EN RELACIÓ AMB, EL PROGRAMARI O L'ÚS O ALTRES RELACIONS AMB EL PROGRAMARI.</value>
+  </data>
+  <data name="createAccount.PasswordDoNotMatch" xml:space="preserve">
+    <value>Les contrasenyes no coincideixen.</value>
+  </data>
+  <data name="login.IvalidEmail" xml:space="preserve">
+    <value>Adreça de correu electrònic no vàlida, si us plau, proporciona una adreça vàlida en el format: email@domini.com</value>
+  </data>
+  <data name="login.ProvideValidEmail" xml:space="preserve">
+    <value>Si us plau, proporciona una adreça de correu electrònic vàlida en el format: email@domini.com</value>
+  </data>
+  <data name="createAccount.RepeatPassword" xml:space="preserve">
+    <value>Repeteix la contrasenya</value>
+  </data>
+  <data name="createAccount.Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="createAccount.AcceptLicense" xml:space="preserve">
+    <value>Accepto el {0}</value>
+  </data>
+  <data name="createAccount.CreateAccount" xml:space="preserve">
+    <value>Crear compte</value>
+  </data>
+  <data name="login.PatternError" xml:space="preserve">
+    <value>Introdueix una contrasenya vàlida amb el següent patró: Mínim 8 caràcters, 1 majúscula, 1 minúscula, 1 número i 1 caràcter especial.</value>
+  </data>
+  <data name="passwordRecovery.Title" xml:space="preserve">
+    <value>Crea una nova contrasenya amb l'adreça de correu registrada a Codis365.</value>
+  </data>
+  <data name="passwordRecovery.PasswordRecovery" xml:space="preserve">
+    <value>Recuperar contrasenya</value>
+  </data>
+  <data name="passwordRecovery.Provide" xml:space="preserve">
+    <value>Si us plau, proporciona una adreça de correu electrònic vàlida en el format: email@domini.com</value>
+  </data>
+  <data name="passwordRecovery.InvalidEmail" xml:space="preserve">
+    <value>Adreça de correu electrònic no vàlida, si us plau, proporciona una adreça vàlida en el format: email@domini.com</value>
+  </data>
+  <data name="passwordRecovery.Confirmation" xml:space="preserve">
+    <value>Rebràs un correu electrònic en uns segons amb un enllaç per restablir la teva contrasenya. Aquest enllaç és vàlid durant 30 minuts. Si no pots fer el canvi dins d'aquest temps, hauràs de sol·licitar un nou canvi de contrasenya.</value>
+  </data>
+  <data name="passwordChangeOk.Info" xml:space="preserve">
+    <value>La teva contrasenya s'ha canviat amb èxit. Si us plau, fes clic al botó de sota per tornar a iniciar sessió a Codis365.</value>
+  </data>
+  <data name="passwordRecovery.PageTitle" xml:space="preserve">
+    <value>Restabliment de Contrasenya</value>
+  </data>
+  <data name="passwordChange.Pagetitle" xml:space="preserve">
+    <value>Canviar contrasenya</value>
+  </data>
+  <data name="passwordChange.Title" xml:space="preserve">
+    <value>Si us plau, introdueix una nova contrasenya segura que compleixi amb les nostres polítiques de seguretat.</value>
+  </data>
+  <data name="topNavBar.Welcome" xml:space="preserve">
+    <value>Benvingut al Backend de Codis365</value>
+  </data>
+  <data name="topNavBar.UnreadMessages" xml:space="preserve">
+    <value>Tens 2 notificacions sense llegir</value>
+  </data>
+  <data name="topNavBar.MessagesTime" xml:space="preserve">
+    <value>Fa 4 minuts</value>
+  </data>
+  <data name="topNavBar.Logout" xml:space="preserve">
+    <value>Tancar sessió</value>
+  </data>
+  <data name="topNavBar.Search" xml:space="preserve">
+    <value>Cercar a Codis365...</value>
+  </data>
+  <data name="navigation.Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="navigation.Notifications" xml:space="preserve">
+    <value>Notificacions</value>
+  </data>
+  <data name="navigation.Logout" xml:space="preserve">
+    <value>Tancar sessió</value>
+  </data>
+  <data name="navigation.Barcodes" xml:space="preserve">
+    <value>Codis de barres</value>
+  </data>
+  <data name="navigation.StaticBarcodes" xml:space="preserve">
+    <value>Codis Estàtics</value>
+  </data>
+  <data name="navigation.DynamicBarcodes" xml:space="preserve">
+    <value>Codis dinàmics</value>
+  </data>
+  <data name="navigation.Management" xml:space="preserve">
+    <value>Gestió</value>
+  </data>
+  <data name="navigation.Help" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="navigation.Support" xml:space="preserve">
+    <value>Suport</value>
+  </data>
+  <data name="navigation.SupportForm" xml:space="preserve">
+    <value>Formulari de suport</value>
+  </data>
+  <data name="navigation.SettingsAndSecurity" xml:space="preserve">
+    <value>Configuració i Seguretat</value>
+  </data>
+  <data name="navigation.Settings" xml:space="preserve">
+    <value>Configuració</value>
+  </data>
+  <data name="navigation.Security" xml:space="preserve">
+    <value>Seguretat</value>
+  </data>
+  <data name="navigation.AnalyticsAndReports" xml:space="preserve">
+    <value>Anàlisi i Informes</value>
+  </data>
+  <data name="navigation.Integration" xml:space="preserve">
+    <value>Integració</value>
+  </data>
+  <data name="navigation.ProductInventory" xml:space="preserve">
+    <value>Inventari de productes</value>
+  </data>
+  <data name="navigation.PriceList" xml:space="preserve">
+    <value>Llista de preus</value>
+  </data>
+  <data name="navigation.Rates" xml:space="preserve">
+    <value>Tarifes</value>
+  </data>
+  <data name="navigation.Catalog" xml:space="preserve">
+    <value>Catàleg</value>
+  </data>
+  <data name="footer.SupportChat" xml:space="preserve">
+    <value>Xat de suport</value>
+  </data>
+  <data name="footer.Claim" xml:space="preserve">
+    <value>UOC, Grau d'Enginyeria Informàtica, Treball Final de Grau, 2024</value>
+  </data>
+  <data name="dashboard.Monthly" xml:space="preserve">
+    <value>Mensual</value>
+  </data>
+  <data name="dashboard.BarcodeGenerated" xml:space="preserve">
+    <value>Codis generats</value>
+  </data>
+  <data name="dashboard.TotalBarcodes" xml:space="preserve">
+    <value>Codis totals</value>
+  </data>
+  <data name="dashboard.Annual" xml:space="preserve">
+    <value>Anual</value>
+  </data>
+  <data name="dashboard.BarcodeReadings" xml:space="preserve">
+    <value>Lectures de codis</value>
+  </data>
+  <data name="dashboard.NewReadings" xml:space="preserve">
+    <value>Noves lectures</value>
+  </data>
+  <data name="dashboard.Today" xml:space="preserve">
+    <value>Avui</value>
+  </data>
+  <data name="dashboard.Interactions" xml:space="preserve">
+    <value>Interaccions</value>
+  </data>
+  <data name="dashboard.NewInteractions" xml:space="preserve">
+    <value>Noves interaccions</value>
+  </data>
+  <data name="dashboard.QRAnalytics" xml:space="preserve">
+    <value>Anàlisi de QR</value>
+  </data>
+  <data name="dashboard.TotalQRPeriod" xml:space="preserve">
+    <value>Total de QR llegits en període</value>
+  </data>
+  <data name="dashboard.TotalQRLastMonth" xml:space="preserve">
+    <value>Lectura de QR en l'últim mes</value>
+  </data>
+  <data name="dashboard.MonthlyQRReading" xml:space="preserve">
+    <value>Lectura mensual de QR</value>
+  </data>
+  <data name="dashboard.UserLastConn" xml:space="preserve">
+    <value>Últimes connexions de l'usuari</value>
+  </data>
+  <data name="dashboard.SourceIPv4" xml:space="preserve">
+    <value>IPv4 d'origen</value>
+  </data>
+  <data name="dashboard.Username" xml:space="preserve">
+    <value>Usuari</value>
+  </data>
+  <data name="dashboard.LastAccess" xml:space="preserve">
+    <value>Últim accés</value>
+  </data>
+  <data name="dashboard.Location" xml:space="preserve">
+    <value>Ubicació</value>
+  </data>
+  <data name="dashboard.DeviceOS" xml:space="preserve">
+    <value>SO Dispositiu</value>
+  </data>
+  <data name="dashboard.DeviceBrowser" xml:space="preserve">
+    <value>Navegador</value>
+  </data>
+  <data name="dashboard.Status" xml:space="preserve">
+    <value>Estat</value>
+  </data>
+  <data name="chat.SupportStaff" xml:space="preserve">
+    <value>Equip de suport #</value>
+  </data>
+  <data name="support.SupportOptions" xml:space="preserve">
+    <value>Opcions de suport</value>
+  </data>
+  <data name="support.Support" xml:space="preserve">
+    <value>Suport</value>
+  </data>
+  <data name="support.SupportOverview" xml:space="preserve">
+    <value>Visió general del suport</value>
+  </data>
+  <data name="support.SendRequest" xml:space="preserve">
+    <value>Enviar Sol·licitud!</value>
+  </data>
+  <data name="support.Video" xml:space="preserve">
+    <value>Tutorials de de suport</value>
+  </data>
+  <data name="support.Placeholder1" xml:space="preserve">
+    <value>Si us plau, descriu el problema que estàs experimentant a Codis365, incloent-hi qualsevol missatge del error que hagis vist i els passos previs que han portat al problema.</value>
+  </data>
+  <data name="support.Placeholder2" xml:space="preserve">
+    <value>Gràcies per posar-te en contacte!</value>
+  </data>
+  <data name="support.ContactForm" xml:space="preserve">
+    <value>Formulari de Contacte</value>
+  </data>
+  <data name="settings.Title" xml:space="preserve">
+    <value>Configuració de l'Aplicació</value>
+  </data>
+  <data name="support.Title" xml:space="preserve">
+    <value>Suport</value>
+  </data>
+  <data name="settings.SettingsOverview" xml:space="preserve">
+    <value>Visió general de configuració</value>
+  </data>
+  <data name="settings.SettingsAndSecurity" xml:space="preserve">
+    <value>Configuració i Seguretat</value>
+  </data>
+  <data name="settings.Settings" xml:space="preserve">
+    <value>Configuració</value>
+  </data>
+  <data name="settings.WebUserProfile" xml:space="preserve">
+    <value> perfil dissenyat per a individus que interactuen amb els serveis de Codis365 principalment a través d'una interfície web. Aquest perfil està pensat per a usuaris que requereixen accés al nostre conjunt complet d'eines en línia per gestionar transaccions de manera eficient.</value>
+  </data>
+  <data name="settings.APIUserProfile" xml:space="preserve">
+    <value> perfil pensat per a desenvolupadors i equips tècnics que integren i interactuen amb els serveis de Codis365 de manera programàtica a través d'APIs. Aquest perfil permet capacitats avançades de personalització i automatització.</value>
+  </data>
+  <data name="settings.ProfileType" xml:space="preserve">
+    <value>Tipus de Perfil: </value>
+  </data>
+  <data name="settings.Products" xml:space="preserve">
+    <value> Productes</value>
+  </data>
+  <data name="settings.QRReadings" xml:space="preserve">
+    <value> Lectures de QR</value>
+  </data>
+  <data name="settings.Interactions" xml:space="preserve">
+    <value> Interaccions</value>
+  </data>
+  <data name="settings.UserProfile" xml:space="preserve">
+    <value>Perfil d'Usuari</value>
+  </data>
+  <data name="settings.SaveData" xml:space="preserve">
+    <value>Desar Dades</value>
+  </data>
+  <data name="settings.GRDP" xml:space="preserve">
+    <value>RGPD, Formulari de Compliment</value>
+  </data>
+  <data name="settings.Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="settings.Surname" xml:space="preserve">
+    <value>Cognoms</value>
+  </data>
+  <data name="settings.grdp1" xml:space="preserve">
+    <value>Dono el meu consentiment per al tractament de les meves dades personals d'acord amb els requisits del &lt;strong&gt;RGPD&lt;/strong&gt;.</value>
+  </data>
+  <data name="settings.grdp2" xml:space="preserve">
+    <value>Estic d'acord a rebre comunicacions de &lt;cite&gt;&lt;strong&gt;màrqueting i ofertes promocionals&lt;/strong&gt;&lt;/cite&gt;.</value>
+  </data>
+  <data name="settings.AplicationsSettings" xml:space="preserve">
+    <value>Configuració de l'aplicació</value>
+  </data>
+  <data name="settings.Setting" xml:space="preserve">
+    <value>Clau</value>
+  </data>
+  <data name="settings.Description" xml:space="preserve">
+    <value>Descripció</value>
+  </data>
+  <data name="settings.Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="settings.LastUpdate" xml:space="preserve">
+    <value>Última Actualització</value>
+  </data>
+  <data name="settings.Status" xml:space="preserve">
+    <value>Estat</value>
+  </data>
+  <data name="settings.IdleTimeout" xml:space="preserve">
+    <value>IdleTimeout</value>
+  </data>
+  <data name="settings.IdleTimeoutTxt" xml:space="preserve">
+    <value>Es refereix al temps abans que la sessió d'un usuari es tanqui automàticament per inactivitat.</value>
+  </data>
+  <data name="settings.Active" xml:space="preserve">
+    <value>Actiu</value>
+  </data>
+  <data name="settings.NotificationEmail" xml:space="preserve">
+    <value>NotificationEmail</value>
+  </data>
+  <data name="settings.NotificationEmailTxt" xml:space="preserve">
+    <value>Gestiona com i quan reps notificacions per correu electrònic de la nostra aplicació. Personalitza les teves preferències per estar informat sobre actualitzacions importants, alertes o esdeveniments.</value>
+  </data>
+  <data name="settings.NotificationSMS" xml:space="preserve">
+    <value>NotificationSMS</value>
+  </data>
+  <data name="settings.NotificationSMSTxt" xml:space="preserve">
+    <value>Gestiona com i quan reps notificacions per correu electrònic de la nostra aplicació. Personalitza les teves preferències per estar informat sobre actualitzacions importants, alertes o esdeveniments.</value>
+  </data>
+  <data name="settings.Disabled" xml:space="preserve">
+    <value>Desactivat</value>
+  </data>
+  <data name="settings.Action" xml:space="preserve">
+    <value>Acció</value>
+  </data>
+  <data name="security.Title" xml:space="preserve">
+    <value>Seguretat</value>
+  </data>
+  <data name="security.Secret" xml:space="preserve">
+    <value>Clau secreta privada utilitzada pel servidor per signar el token.</value>
+  </data>
+  <data name="security.SecurityOverview" xml:space="preserve">
+    <value>Visió General de Seguretat</value>
+  </data>
+  <data name="security.SettingsAndSecurity" xml:space="preserve">
+    <value>Configuració i Seguretat</value>
+  </data>
+  <data name="settings.Security" xml:space="preserve">
+    <value>Seguretat</value>
+  </data>
+  <data name="security.ProfileSecurity" xml:space="preserve">
+    <value>Canvia la teva contrasenya.</value>
+  </data>
+  <data name="security.CurrentPassword" xml:space="preserve">
+    <value>Contrasenya Actual</value>
+  </data>
+  <data name="security.NewPassword" xml:space="preserve">
+    <value>Contrasenya Nova</value>
+  </data>
+  <data name="security.RepeatPassword" xml:space="preserve">
+    <value>Repetir contrasenya</value>
+  </data>
+  <data name="security.ChangePassword" xml:space="preserve">
+    <value>Canviar Contrasenya</value>
+  </data>
+  <data name="security.PasswordLink" xml:space="preserve">
+    <value>Envia l'Enllaç per Canviar la Contrasenya.</value>
+  </data>
+  <data name="security.SendLink" xml:space="preserve">
+    <value>Enviar Enllaç</value>
+  </data>
+  <data name="security.Description" xml:space="preserve">
+    <value>Descripció</value>
+  </data>
+  <data name="security.APISecurityToken" xml:space="preserve">
+    <value>Token de Seguretat de l'API</value>
+  </data>
+  <data name="security.CreatedOn" xml:space="preserve">
+    <value>Creat el</value>
+  </data>
+  <data name="notifications.Title" xml:space="preserve">
+    <value>Notificacions</value>
+  </data>
+  <data name="notifications.Notifications" xml:space="preserve">
+    <value>Notificacions</value>
+  </data>
+  <data name="notifications.Notification" xml:space="preserve">
+    <value>Notificació</value>
+  </data>
+  <data name="notifications.From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="notifications.Received" xml:space="preserve">
+    <value>Rebuda</value>
+  </data>
+  <data name="notifications.CompleteYour" xml:space="preserve">
+    <value>Completa el teu perfil ara!</value>
+  </data>
+  <data name="notifications.CompleteYourTxt1" xml:space="preserve">
+    <value>Benvingut a la nostra comunitat! Per aprofitar al màxim la teva experiència i desbloquejar totes les funcions que t'oferim, necessitem una mica més d'informació sobre tu. Completa el teu perfil ara per accedir a contingut exclusiu, recomanacions personalitzades i molt més. Som-hi!</value>
+  </data>
+  <data name="notifications.CompleteYourTxt2" xml:space="preserve">
+    <value>Estem emocionats de veure què aconsegueixes amb accés complet! Si necessites ajuda durant el procés, el nostre equip de suport és a només un clic de distància.</value>
+  </data>
+  <data name="notifications.CompleteYourTxt3" xml:space="preserve">
+    <value>Atentament,&lt;br /&gt;L'Equip de Serveis de Codis365</value>
+  </data>
+  <data name="notifications.Unread" xml:space="preserve">
+    <value>No llegit</value>
+  </data>
+  <data name="notifications.Read" xml:space="preserve">
+    <value>Llegit</value>
+  </data>
+  <data name="notifications.CompleteYourFB" xml:space="preserve">
+    <value>Completa el teu perfil per desbloquejar tots els beneficis!</value>
+  </data>
+  <data name="notifications.CompleteYourFB1" xml:space="preserve">
+    <value>Benvingut a la nostra comunitat! Per aprofitar al màxim la teva experiència i desbloquejar totes les funcions que t'oferim, necessitem una mica més d'informació sobre tu. Completa el teu perfil ara per accedir a contingut exclusiu, recomanacions personalitzades i molt més. Som-hi!</value>
+  </data>
+  <data name="notifications.CompleteYourFB2" xml:space="preserve">
+    <value>Estem emocionats de veure què aconsegueixes amb accés complet! Si necessites ajuda durant el procés, el nostre equip de suport és a només un clic de distància.</value>
+  </data>
+  <data name="notifications.CompleteYourFB3" xml:space="preserve">
+    <value>Atentament,&lt;br /&gt;L'Equip de Serveis de Codis365</value>
+  </data>
+  <data name="notifications.CompleteYourJourney" xml:space="preserve">
+    <value>Benvingut als Serveis Codis365 – El teu viatge comença aquí!</value>
+  </data>
+  <data name="notifications.CompleteYourJourneyTxt1" xml:space="preserve">
+    <value>Hola i gràcies per triar els Serveis Codis365! Estem emocionats de tenir-te a bord i esperem poder ajudar-te a aconseguir els teus objectius amb les nostres solucions de punta. Tant si busques millorar les teves operacions, optimitzar processos o augmentar l'eficiència, el nostre equip dedicat està aquí per donar-te suport en cada pas del camí.
+Com a client de Codis365, tens accés a la nostra suite de serveis innovadors i a un equip de suport que realment es preocupa pel teu èxit. Explora la nostra gamma d'ofertes i no dubtis a contactar amb nosaltres si tens alguna pregunta o si necessites assistència personalitzada.</value>
+  </data>
+  <data name="notifications.CompleteYourJourneyTxt2" xml:space="preserve">
+    <value>Gràcies per confiar en nosaltres. Fem grans coses junts!</value>
+  </data>
+  <data name="notifications.CompleteYourJourneyTxt3" xml:space="preserve">
+    <value>Atentament,&lt;br /&gt;L'Equip de Serveis de Codis365</value>
+  </data>
+  <data name="analytics.Title" xml:space="preserve">
+    <value>Anàlisis i Informes</value>
+  </data>
+  <data name="analytics.Incoming" xml:space="preserve">
+    <value>Interaccions entrants</value>
+  </data>
+  <data name="analytics.Origin" xml:space="preserve">
+    <value>Origen de les lectures de codis QR</value>
+  </data>
+  <data name="analytics.Update" xml:space="preserve">
+    <value>Actualització</value>
+  </data>
+  <data name="analytics.Most" xml:space="preserve">
+    <value>Còdigs de barres més llegits</value>
+  </data>
+  <data name="analytics.Historical" xml:space="preserve">
+    <value>Tots els registres històrics estan inclosos</value>
+  </data>
+  <data name="analytics.Analytic" xml:space="preserve">
+    <value>Informe Analític</value>
+  </data>
+  <data name="analytics.NoData" xml:space="preserve">
+    <value>No hi ha dades per generar informes. Torna després de 24 hores.</value>
+  </data>
+  <data name="analytics.UserStats" xml:space="preserve">
+    <value>Informe d'Estadístiques d'Usuari</value>
+  </data>
+  <data name="working.Txt1" xml:space="preserve">
+    <value>Estem emocionats d'anunciar que actualment estem treballant en una secció d'Integració (Llista de Preus) per a la nostra plataforma! Aquesta nova funció està dissenyada per millorar la teva experiència proporcionant connexions sense interrupcions entre Codis365 i altres eines i serveis que utilitzes.</value>
+  </data>
+  <data name="working.Txt2" xml:space="preserve">
+    <value>Mantingueu-vos atents:</value>
+  </data>
+  <data name="working.Txt3" xml:space="preserve">
+    <value>Agraïm la teva paciència i entusiasme mentre preparem el llançament d'aquesta nova funció. Mantingueu-vos atents a les actualitzacions i esperem millorar la teva experiència a Codis365 amb potents capacitats d'integració.</value>
+  </data>
+  <data name="working.Txt4" xml:space="preserve">
+    <value>Gràcies per formar part de la nostra comunitat. Estem desitjosos de portar-te aquestes noves funcionalitats que t'ajudaran a portar la teva productivitat al següent nivell.</value>
+  </data>
+  <data name="working.Txt0" xml:space="preserve">
+    <value>Aquesta opció estarà disponible aviat!</value>
+  </data>
+  <data name="integration.RatesList" xml:space="preserve">
+    <value>Llista de Tarifes</value>
+  </data>
+  <data name="integration.Catalog" xml:space="preserve">
+    <value>Catàleg</value>
+  </data>
+  <data name="integration.Inventory" xml:space="preserve">
+    <value>Inventari de Productes</value>
+  </data>
+  <data name="integration.Prices" xml:space="preserve">
+    <value>Preus</value>
+  </data>
+  <data name="integration.InventoryOverview" xml:space="preserve">
+    <value>Visió General de l'Inventari</value>
+  </data>
+  <data name="integration.Integration" xml:space="preserve">
+    <value>Integració</value>
+  </data>
+  <data name="integration.PricesOverview" xml:space="preserve">
+    <value>Visió General de Preus</value>
+  </data>
+  <data name="integration.CatalogOverview" xml:space="preserve">
+    <value>Visió General del Catàleg</value>
+  </data>
+  <data name="integration.RatesOverview" xml:space="preserve">
+    <value>Visió General de Tarifes</value>
+  </data>
+  <data name="barcodes.Management" xml:space="preserve">
+    <value>Gestió</value>
+  </data>
+  <data name="barcodes.BarcodesOverview" xml:space="preserve">
+    <value>Vista General de laCòdigs de Barres</value>
+  </data>
+  <data name="barcodes.Barcodes" xml:space="preserve">
+    <value>Còdigs de barres</value>
+  </data>
+  <data name="barcodes.BarcodeManagement" xml:space="preserve">
+    <value>Gestió de Còdigs de Barres</value>
+  </data>
+  <data name="staticbarcodes.StaticBarcodes" xml:space="preserve">
+    <value>Còdigs de Barres Estàtics</value>
+  </data>
+  <data name="staticbarcodes.UserStaticBarcodes" xml:space="preserve">
+    <value>Còdigs de Barres Estàtics d'Usuari</value>
+  </data>
+  <data name="barcodes.Barcode" xml:space="preserve">
+    <value>Còdi de barres</value>
+  </data>
+  <data name="barcodes.Description" xml:space="preserve">
+    <value>Descripció</value>
+  </data>
+  <data name="barcodes.CreatedOn" xml:space="preserve">
+    <value>Creat el</value>
+  </data>
+  <data name="barcodes.Type" xml:space="preserve">
+    <value>Tipus</value>
+  </data>
+  <data name="barcodes.Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="barcodes.Status" xml:space="preserve">
+    <value>Estat</value>
+  </data>
+  <data name="barcodes.Action" xml:space="preserve">
+    <value>Acció</value>
+  </data>
+  <data name="barcodes.ShortLink" xml:space="preserve">
+    <value>ShortLink</value>
+  </data>
+  <data name="dynamicbarcodes.DynamicBarcodes" xml:space="preserve">
+    <value>Còdigs de Barres Dinàmics</value>
+  </data>
+  <data name="dynamicbarcodes.UserDynamicBarcodes" xml:space="preserve">
+    <value>Còdigs de Barres Dinàmics d'Usuari</value>
+  </data>
+  <data name="support.SupportStaff" xml:space="preserve">
+    <value>Equip de Suport</value>
+  </data>
+  <data name="support.WroteOn" xml:space="preserve">
+    <value>va escriure el</value>
+  </data>
+  <data name="support.SupportPrompt" xml:space="preserve">
+    <value>Com podem ajudar-te avui amb els serveis de Codis365?</value>
+  </data>
+  <data name="support.PreviousButton" xml:space="preserve">
+    <value>Converses anteriors</value>
+  </data>
+  <data name="security.Enable2FA" xml:space="preserve">
+    <value>&lt;strong&gt;Habilitar 2FA&lt;/strong&gt; (Activa-Desactiva l'autenticació en dos factors per augmentar la seguretat del teu compte i protegir-lo contra accessos no autoritzats)</value>
+  </data>
+</root>

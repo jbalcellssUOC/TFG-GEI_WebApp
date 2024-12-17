@@ -1,5 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Dynamic Barcodes";
+﻿@using Entities.DTOs
+@model DashboardUserProfileDTO;
+
+@{
+    ViewData["Title"] = @Localizer["dynamicbarcodes.DynamicBarcodes"];
 }
 
 <link rel="stylesheet" href="~/css/views/dynamicbc.css" asp-append-version="true" />
@@ -7,16 +10,16 @@
 
 <div class="row wrapper white-bg page-heading">
     <div class="col-lg-12">
-        <h2>Barcodes Overview</h2>
+        <h2>@Localizer["barcodes.BarcodesOverview"]</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a>Barcodes</a>
+                <a>@Localizer["barcodes.Barcodes"]</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Dynamic Barcodes</strong>
+                <strong>@Localizer["dynamicbarcodes.DynamicBarcodes"]</strong>
             </li>
         </ol>
     </div>
@@ -30,7 +33,7 @@
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>User Dymamic Barcodes</h5>
+                    <h5>@Localizer["dynamicbarcodes.UserDynamicBarcodes"]</h5>
                 </div>
                 <div class="ibox-content max-height-view">
                     <div class="row">
@@ -42,14 +45,14 @@
                                         <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
                                             <thead>
                                                 <tr>
-                                                    <th data-hide="id">Barcode #</th>
-                                                    <th data-hide="Description">Description</th>
-                                                    <th data-toggle="true">Created on</th>
-                                                    <th data-hide="type">Type</th>
-                                                    <th data-hide="value">Value</th>
-                                                    <th data-hide="short">ShortLink</th>
-                                                    <th data-hide="status">Status</th>
-                                                    <th class="text-right" data-sort-ignore="true">Action</th>
+                                                    <th data-hide="id">@Localizer["barcodes.Barcode"] #</th>
+                                                    <th data-hide="Description">@Localizer["barcodes.Description"]</th>
+                                                    <th data-toggle="true">@Localizer["barcodes.CreatedOn"]</th>
+                                                    <th data-hide="type">@Localizer["barcodes.Type"]</th>
+                                                    <th data-hide="value">@Localizer["barcodes.Value"]</th>
+                                                    <th data-hide="short">@Localizer["barcodes.ShortLink"]</th>
+                                                    <th data-hide="status">@Localizer["barcodes.Status"]</th>
+                                                    <th class="text-right" data-sort-ignore="true">@Localizer["barcodes.Action"]</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

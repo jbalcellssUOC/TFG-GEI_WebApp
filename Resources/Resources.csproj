@@ -26,4 +26,19 @@
     </AdditionalFiles>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="BasicResources.ca.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="BasicResources.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="BasicResources.es.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="BasicResources.pt.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
