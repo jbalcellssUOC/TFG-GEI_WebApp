@@ -1,0 +1,264 @@
+﻿@using Entities.DTOs
+@model DashboardUserProfileDTO;
+
+@{
+    ViewData["Title"] = "App Settings";
+    Random rand = new Random();
+    int productsCount = rand.Next(100, 200); 
+    int qrReadingsCount = rand.Next(1000, 5000); 
+    int interactionsCount = rand.Next(400, 15000);  
+}
+
+<link rel="stylesheet" href="~/css/views/settings.css" asp-append-version="true" />
+<script src="~/js/views/settings.js" asp-append-version="true"></script>
+
+<div class="row wrapper white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Settings Overview</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>Settings & Security</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Settings</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row m-b-lg m-t-lg">
+        <div class="col-md-8">
+
+            <div class="profile-image">
+                <img src="~/images/profile_medium.jpg" title="Click to change profile image..." class="rounded-circle circle-border m-b-md" alt="profile" style="cursor: pointer">
+            </div>
+            <div class="profile-info">
+                <div class="">
+                    <div>
+                        <h2 class="no-margins">
+                            @Model.UserName
+                        </h2>
+                        <h4>Email: <a href="#">@Model.UserLogin</a></h4>
+                        <h4>Profile Type: @Model.UserProfile</h4>
+
+                        @if (@Model.UserProfile == "Web User")
+                        {
+                            <small style="font-family: Montserrat">
+                                The <cite>"Web User"</cite> profile is designed for individuals who interact with Codis365 services primarily through a web interface. This profile caters to users who require access to our comprehensive suite of online tools for managing transactions efficiently.
+                            </small>
+                        }
+                        else 
+                        {
+                            <small style="font-family: Montserrat">
+                                The <cite>"API User"</cite> profile is tailored for developers and technical teams who integrate and interact with Codis365 services programmatically through APIs. This profile enables advanced customization and automation capabilities.
+                            </small>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <table class="table small m-b-xs">
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>@productsCount.ToString("N0")</strong> Products
+                        </td>
+                        <td>
+                            <strong>@qrReadingsCount.ToString("N0")</strong> QR Readings
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>@interactionsCount.ToString("N0")</strong> Interactions
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>User Profile</h5>
+                </div>
+
+                <div class="ibox-content">
+                    <form role="form">
+                        <div class="form-group"><label>Name</label> <input type="" placeholder="@Model.UserName" class="form-control"></div>
+                        <div class="form-group"><label>Surname</label> <input type="" placeholder="" class="form-control"></div>
+                        <div>
+                            <button class="btn btn-sm btn-primary float-right m-t-n-xs" type="submit"><strong>Save Data</strong></button>
+                            <label>  </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>GDPR Compliance Form</h5>
+                </div>
+                <div class="ibox-content">
+                    <form role="form">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="" checked>
+                                    <small class="grdp">I consent to the processing of my personal data in accordance with the <strong>GDPR</strong> requirements.</small>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="" checked>
+                                    <small class="grdp">I agree to receive marketing communications and <cite>promotional offers</cite>.</small>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+
+                <div class="ibox-title">
+                    <h5>Aplications Settings</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                            <thead>
+                                <tr>
+                                    <th data-toggle="true">Setting</th>
+                                    <th data-hide="description">Description</th>
+                                    <th data-hide="value">Value</th>
+                                    <th data-hide="lastu">Last Update</th>
+                                    <th data-hide="status">Status</th>
+                                    <th class="text-right" data-sort-ignore="true">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>IdleTimeout</td>
+                                    <td>Refers to the time before a user's session is automatically terminated due to inactivity.</td>
+                                    <td>
+                                        30''
+                                    </td>
+                                    <td>
+                                        <span class="label label-primary">2024-05-02, 13:46</span>
+                                    </td>
+                                    <td>
+                                        <span class="label label-primary">Active</span>
+                                    </td>
+                                    <td class="text-right">
+                                          <a href="#" title="Modify" ><i class="fa fa-edit text-navy"></i></a>
+                                          <a href="#" title="Delete" ><i class="fa fa-trash text-navy"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NotificationEmail</td>
+                                    <td>Manage how and when you receive notifications via email from our application. Customize your preferences to stay informed about important updates, alerts, or events.</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-check text-navy"></i></a>
+                                    </td>
+                                    <td>
+                                        <span class="label label-primary">2024-05-14, 19:28</span>
+                                    </td>
+                                    <td>
+                                        <span class="label label-primary">Active</span>
+                                    </td>
+                                    <td class="text-right">
+                                          <a href="#" title="Modify" ><i class="fa fa-edit text-navy"></i></a>
+                                          <a href="#" title="Delete" ><i class="fa fa-trash text-navy"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>NotificationSMS</td>
+                                    <td>Stay updated with real-time alerts and notifications directly to your mobile device. Configure your SMS notification preferences to ensure you never miss critical information and updates from our application.</td>
+                                    <td>
+                                        <a href="#"><i class="fa fa-window-close text-navy" style="color:red!important"></i></a>
+                                    </td>
+                                    <td>
+                                        <span class="label label-primary">2024-04-29, 11:34</span>
+                                    </td>
+                                    <td>
+                                        <span class="label label-primary" style="background-color:red">Disabled</span>
+                                    </td>
+                                    <td class="text-right">
+                                          <a href="#" title="Modify" ><i class="fa fa-edit text-navy"></i></a>
+                                          <a href="#" title="Delete" ><i class="fa fa-trash text-navy"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        <ul class="pagination float-right"></ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Styles {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/inspinia/lib/footable/css/footable.core.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/iCheck/custom.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/inspinia/lib/footable/css/footable.core.min.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/iCheck/custom.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/inspinia/lib/footable/dist/footable.all.min.js"></script>
+        <script src="~/inspinia/lib/iCheck/icheck.min.js"></script>
+        <script src="~/inspinia/lib/sparkline/jquery.sparkline.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $('.footable').footable();
+
+            $("#sparkline1").sparkline([34, 43, 43, 35, 44, 32, 44, 48], {
+                type: 'line',
+                width: '100%',
+                height: '50',
+                lineColor: '#1ab394',
+                fillColor: "transparent"
+            });
+
+        });
+    </script>
+}
+

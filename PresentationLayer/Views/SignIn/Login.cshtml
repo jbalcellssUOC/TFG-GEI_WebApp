@@ -1,0 +1,204 @@
+﻿@model Entities.DTOs.LoginUserDTO
+
+<head>
+		<script src="https://accounts.google.com/gsi/client" async defer onerror="handleError()"></script>
+</head>
+
+<!DOCTYPE HTML>
+<html>
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+				<div id="loaderlayout" style="display:none"></div>
+				<div class="wrap-login100">
+					<form id="loginForm" class="login100-form validate-form" method="post" asp-controller="SignIn" asp-action="Login">
+
+						<span class="login100-form-title p-b-15">
+		  					<img src="~/lib/login/images/codis365.jpg" alt="Codis365 Logo" height="120">
+						</span>
+
+						<span class="login100-form-title p-b-50">
+							Sign in with your email
+						</span>
+
+						<div id="usernameDiv" class="wrap-input100 m-b-30" data-validate = "Invalid email address, please provide a valid address in the format: email@domain.com">
+							<input asp-for="Username" id="Username" class="input100" type="email" title="Please provide a valid email address in the format: email@domain.com">
+							<span class="focus-input100" data-placeholder="Email"></span>
+						</div>
+
+						<div id="passwordDiv" class="wrap-input100" data-validate="Enter a valid password with the following pattern: Minimum 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character.">
+							<span class="btn-show-pass">
+								<i class="zmdi zmdi-eye"></i>
+							</span>
+							<input asp-for="Password" id="Password" class="input100" type="password" name="Password" autocomplete="current-password" title="Password must contain at least 8 characters, including 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.">
+							<span class="focus-input100" data-placeholder="Password"></span>
+						</div>
+
+						<div asp-validation-summary="All" class="text-danger m-t-15 m-b-15"></div>
+
+						<div class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+								<button id="loginButton" class="login100-form-btn">
+									Login
+								</button>
+							</div>
+						</div>
+
+						<div class="container-login100-form-btn">
+							<div id="g_id_onload"
+									data-client_id="272437086382-10n5v4p6sd2podip2ud15k7g8omo5grk.apps.googleusercontent.com"
+									data-callback="onSignIn"
+									data-auto_prompt="false">
+							</div>
+							<div class="g_id_signin" style="background: black;"
+									onerror="handleError()"
+									data-type="standard"
+									data-shape="rectangular"
+									data-theme=""
+									data-logo_alignment="center"
+									data-text="sign_in_with"
+									data-size="large"
+									>
+							</div>
+						</div>
+						<input type="hidden" id="hiddenAuthToken" name="AuthToken" value="@Model.AuthToken" />
+
+						<div class="text-center p-t-20">
+						  <label class="txt1">
+								<input asp-for="KeepSigned" id="KeepSigned" type="checkbox" name="KeepSigned" class="checkkeep" onchange="saveKeepSignedState()">
+							Keep me signed in
+						  </label>
+						</div>
+
+						<div class="text-center p-t-15">
+							<a class="txt2" href="@Url.Action("PasswordRecovery", "SignIn")">
+								Forgot your password?
+								<i class="fa fa-share-square-o" aria-hidden="true"></i>
+							</a>
+						</div>
+
+						<div class="text-center p-t-1">
+							<a class="txt2" href="@Url.Action("CreateAccount", "SignIn")">
+								Create an account to use Codis365 services 
+								<i class="fa fa-external-link-square" aria-hidden="true"></i>
+							</a>
+						</div>
+					</form>
+				</div>
+		</div>
+	</div>
+
+	<div id="dropDownSelect1"></div>
+	
+	<script asp-append-version="true" src="~/js/iLabSpinner.js"></script>
+	<script src="~/lib/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="~/lib/login/vendor/animsition/js/animsition.min.js"></script>
+	<script src="~/lib/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/lib/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/lib/login/vendor/select2/select2.min.js"></script>
+	<script src="~/lib/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="~/lib/login/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="~/lib/login/vendor/countdowntime/countdowntime.js"></script>
+	<script src="~/lib/login/js/main.js"></script>
+	<script src="~/lib/spin/spin.js"></script>
+
+	<script 
+		src="https://apis.google.com/js/platform.js?onload=renderButton" async defer>
+	</script>
+</body>
+</html>
+
+<script>
+	iLabSpinner = Rats.UI.LoadAnimation.start();
+	iLabSpinner.stop();
+	loadKeepSignedState();
+
+
+	$(document).ready(function () {
+		$('#loaderlayout').css("display", "none");
+		iLabSpinner.stop();
+	});
+
+	var regexPattern1 = /^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	var regexPattern2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}$/;
+
+	var loginForm = document.getElementById('loginForm');
+	var username = document.getElementById('Username');
+	var password = document.getElementById('Password');
+
+	var hiddenAuthToken = document.getElementById('hiddenAuthToken');
+	hiddenAuthToken.value = "";
+
+    function showValidate(input) {
+        var thisAlert = $(input).parent();
+        $(thisAlert).addClass('alert-validate');
+	}
+
+	function onSignIn(response) {
+		var token = response.credential;
+		iLabSpinner.stop();
+		iLabSpinner = Rats.UI.LoadAnimation.start();
+		$('#loaderlayout').css("display", "block");
+
+		if (token) {
+			hiddenAuthToken.value = token;
+			loginForm.submit();
+		} 
+		else {
+			username.value = ''
+			password.value = '';
+			username.focus();
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', function() {
+
+		var validationSummary = document.querySelector('div[asp-validation-summary="All"]');
+		if (validationSummary) {
+			validationSummary.style.display = 'none';
+		}
+
+		loginForm.addEventListener('submit', function(event) {
+
+			if (!hiddenAuthToken.value) {
+
+				if (!regexPattern1.test(username.value)) {
+					iLabSpinner.stop();
+					showValidate(username);
+					event.preventDefault();
+					return;
+				}
+
+				if (!regexPattern2.test(password.value)) {
+					iLabSpinner.stop();
+					showValidate(password);
+					event.preventDefault();
+					return;
+				}
+			}
+
+			iLabSpinner.stop();
+			iLabSpinner = Rats.UI.LoadAnimation.start();
+			$('#loaderlayout').css("display", "block");
+		});
+	});
+
+	function handleError() { 
+		console.log("Failed to load the Google Identity Services script."); 
+	}
+
+	// Function to save the checkbox state
+	function saveKeepSignedState() {
+		var checkbox = document.getElementById('KeepSigned');
+		localStorage.setItem('keepSigned', checkbox.checked);
+	}
+
+	// Function to load the checkbox state
+	function loadKeepSignedState() {
+		var checkbox = document.getElementById('KeepSigned');
+		var checked = localStorage.getItem('keepSigned') === 'true';
+		checkbox.checked = checked;
+	}
+
+</script>

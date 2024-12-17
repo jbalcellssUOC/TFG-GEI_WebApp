@@ -1,0 +1,206 @@
+﻿@using Entities.DTOs
+@model DashboardUserProfileDTO;
+
+@{
+    ViewData["Title"] = "Analytics & Reports";
+}
+
+<link rel="stylesheet" href="~/css/views/analytics.css" asp-append-version="true" />
+<script src="~/js/views/analytics.js" asp-append-version="true"></script>
+
+<div class="row wrapper white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Analytics & Reports</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Analytics & Reports</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row" id="sortable-view">
+        <div class="col-lg-4">
+            <div class="ibox">
+
+                <div class="ibox-title">
+                    <h5>Incoming interactions</h5>
+                    <p>Origin of QR code readings</p>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#" class="dropdown-item">Update</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                    <div id="arc_map"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Most read barcodes</h5>
+                    <p>All historical records are included</p>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a href="#" class="dropdown-item">Update</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="flot-chart">
+                        <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" id="sortable-view">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Analytic Report</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <p style="padding-left: 15px;padding-top: 5px"><small style="font-size:14px;font-family:Montserrat">*There is no data to generate reports. Please come back after 24 hours.</small></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="sortable-view">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>User Stats Report</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                            <thead>
+                                <tr>
+                                    <th data-hide="Source">Source IPv4</th>
+                                    <th data-hide="username">Username</th>
+                                    <th data-toggle="true">Last access</th>
+                                    <th data-hide="location">Location</th>
+                                    <th data-hide="deviceos">Device OS</th>
+                                    <th data-hide="browser">Device Browser</th>
+                                    <th data-hide="status">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var userStats in ViewBag.UserStats)
+                                {
+                                    <tr>
+                                        <td><span class="label label-primary">@userStats.IPv4</span></td>
+                                        <td>@Model.UserName</td>
+                                        <td>@userStats.IsoDateC.ToString()</td>
+                                        <td>@userStats.Location</td>
+                                        <td>@userStats.DevOS</td>
+                                        <td>@userStats.DevBrowser</td>
+                                        <td>
+                                            <a href="#"><i class="fa fa-check text-navy")"></i></a>
+                                            @* fa-times text-danger *@
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="7">
+                                        <ul class="pagination float-right"></ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@section Styles {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/inspinia/lib/footable/css/footable.core.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/iCheck/custom.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/inspinia/lib/footable/css/footable.core.min.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/iCheck/custom.css" />
+        <link rel="stylesheet" href="~/inspinia/lib/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/inspinia/lib/d3/d3.js"></script>
+        <script src="~/inspinia/lib/topojson/topojson.js"></script>
+        <script src="~/inspinia/lib/datamaps/datamaps.all.min.js"></script>
+        <script src="~/inspinia/lib/footable/dist/footable.all.min.js"></script>
+        <script src="~/inspinia/lib/iCheck/icheck.min.js"></script>
+
+        <script src="~/inspinia/lib/flot/jquery.flot.js"></script>
+        <script src="~/inspinia/lib/flot/jquery.flot.tooltip.min.js"></script>
+        <script src="~/inspinia/lib/flot/jquery.flot.resize.js"></script>
+        <script src="~/inspinia/lib/flot/jquery.flot.pie.js"></script>
+        <script src="~/inspinia/lib/flot/jquery.flot.time.js"></script>
+        <script src="~/inspinia/lib/flot/jquery.flot.spline.js"></script>
+
+        <script src="~/inspinia/lib/jquery-ui/jquery-ui.js"></script>
+        <script src="~/inspinia/lib/touchpunch/jquery.ui.touch-punch.min.js"></script>
+
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.footable').footable();
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+            WinMove();
+        });
+    </script>
+}

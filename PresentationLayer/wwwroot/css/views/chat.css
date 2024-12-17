@@ -1,0 +1,48 @@
+﻿#chatContent {
+    height: 100% !important; /* Adjust based on your needs */
+    overflow-y: auto; /* Enables vertical scrolling */
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Align children centrally on the cross-axis */
+    width: 100%; /* Optional: Ensure it spans the full width */
+    heigh: 80%
+}
+
+#previousConversationsBtn > .center {
+    text-align: center;
+    position: relative;
+    top: 5px;
+}
+
+#chatContent > .left {
+    align-self: flex-start; /* Aligns the content to the left */
+}
+
+#chatContent > .right {
+    align-self: flex-end; /* Aligns the content to the right */
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Take the full width of the container */
+    padding: 0; /* Add some vertical padding */
+    padding-bottom: 15px;
+}
+
+    .loading-dots > div {
+        width: 8px;
+        height: 8px;
+        background-color: #333;
+        border-radius: 50%;
+        margin: 0 2px;
+        animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+        .loading-dots > div:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots > div:nth-child(2) {
+            animation-delay: -0.16s;
+        }
