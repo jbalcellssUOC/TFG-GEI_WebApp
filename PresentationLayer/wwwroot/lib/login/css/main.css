@@ -214,6 +214,13 @@ iframe {
   font-size: 60px;
 }
 
+.language-form {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	display: flex;
+}
+
 /*------------------------------------------------------------------
 [ Input ]*/
 
