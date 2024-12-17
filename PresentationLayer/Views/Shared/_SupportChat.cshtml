@@ -1,4 +1,15 @@
-﻿<div id="loadingIndicator" class="loading-dots" style="display: none;">
+﻿
+<script>
+    var SupportStaff = "@Html.Raw(Localizer["support.SupportStaff"])";
+    var SupportWroteOn = "@Html.Raw(Localizer["support.WroteOn"])";
+    var SupportPrompt = "@Html.Raw(Localizer["support.SupportPrompt"])";
+    var SupportUser = "@ViewBag.Username";
+    var SupportPreviousButton = "@Html.Raw(Localizer["support.PreviousButton"])";
+</script>
+
+<script src="~/js/chat.js" asp-append-version="true"></script>
+
+<div id="loadingIndicator" class="loading-dots" style="display: none;">
     <div></div><div></div><div></div>
 </div>
 
@@ -12,16 +23,14 @@
     </div>
 
     <div id="chatContent" class="content">
- @*            
         <!-- Button to trigger previous conversations -->
         <div id="previousConversationsBtn">
             <div class="center">
-                <button class="btn btn-secondary">
+                <button class="btn btn-secondary" disabled>
                     Previous conversations
                 </button>
             </div>
         </div> 
-*@
        
 @*         
         <div class="left">

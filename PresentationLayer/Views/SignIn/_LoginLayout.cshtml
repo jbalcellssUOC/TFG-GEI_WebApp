@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Codis365 Backend Login</title>
+	<title>@(ViewData["Title"] ?? "Codis365 Backend Login")</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -24,6 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="~/lib/login/css/main.css?ver=@DateTime.Now.Ticks">
 
 	<link rel="stylesheet" type="text/css" href="~/css/spin.css?ver=@DateTime.Now.Ticks">
+	@RenderSection("HeadContent", required: false)
 </head>
 <body>
     @RenderBody()

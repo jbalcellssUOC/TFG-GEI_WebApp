@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = @Localizer["integration.Catalog"];
+}
+
+<link rel="stylesheet" href="~/css/views/analytics.css" asp-append-version="true" />
+<script src="~/js/views/analytics.js" asp-append-version="true"></script>
+
+<div class="row wrapper white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>@Localizer["integration.CatalogOverview"]</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a>@Localizer["integration.Integration"]</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>@Localizer["integration.Catalog"]</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>@Localizer["integration.Catalog"]</h5>
+                </div>
+                <div class="ibox-content">
+                    <img src="/images/coming_soon.jpg" height="150"/>
+                    <br /><br /><br /><br />
+                    <div class="row" style="padding-left: 10px;">
+                        <p>
+                            <strong>@Localizer["working.Txt0"]</strong>
+                            <br />
+                            <br />
+                            @Localizer["working.Txt1"]
+                        </p>
+                        <p>
+                            <strong>@Localizer["working.Txt2"]</strong>
+                            <br />
+                            <br />
+                            @Localizer["working.Txt3"]
+                            <br />
+                            @Localizer["working.Txt4"]
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

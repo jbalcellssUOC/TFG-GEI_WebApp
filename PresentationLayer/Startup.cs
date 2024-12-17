@@ -1,50 +1,61 @@
-﻿using AutoMapper;
-using BusinessLogicLayer.Classes;
-using BusinessLogicLayer.Interfaces;
-using BusinessLogicLayer.Mappings;
-using BusinessLogicLayer.Services;
-using DataAccessLayer.Classes;
-using Entities.Data;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Connections;
-using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.ResponseCompression;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Localization;
-using Microsoft.Net.Http.Headers;
-using NLog;
-using NLog.Web;
-using Resources;
-using SecurityHubs.Hubs;
-using System;
-using System.Globalization;
-using System.IO.Compression;
-using System.Net;
-
-namespace PresentationLayer
+﻿namespace PresentationLayer
 {
+    using AutoMapper;
+    using BusinessLogicLayer.Classes;
+    using BusinessLogicLayer.Interfaces;
+    using BusinessLogicLayer.Mappings;
+    using BusinessLogicLayer.Services;
+    using DataAccessLayer.Classes;
+    using Entities.Data;
+    using Microsoft.AspNetCore.Authentication.Cookies;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Http.Connections;
+    using Microsoft.AspNetCore.HttpOverrides;
+    using Microsoft.AspNetCore.Localization;
+    using Microsoft.AspNetCore.ResponseCompression;
+    using Microsoft.Data.SqlClient;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.Net.Http.Headers;
+    using NLog;
+    using SecurityHubs.Hubs;
+    using System;
+    using System.Globalization;
+    using System.IO.Compression;
+    using System.Net;
+
+    /// <summary>
+    /// Defines the <see cref="Startup" />
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// </summary>
+        /// <param name="configuration">The configuration<see cref="IConfiguration"/></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Gets the Configuration
+        /// </summary>
         public IConfiguration Configuration { get; }
 
+        /// <summary>
+        /// The ConfigureServices
+        /// </summary>
+        /// <param name="services">The services<see cref="IServiceCollection"/></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<GzipCompressionProviderOptions>(options => { options.Level = CompressionLevel.SmallestSize; });
-            services.AddResponseCompression(options => {
+            services.AddResponseCompression(options =>
+            {
                 options.EnableForHttps = true;
                 options.Providers.Add<GzipCompressionProvider>();
                 options.Providers.Add<BrotliCompressionProvider>();
@@ -95,7 +106,8 @@ namespace PresentationLayer
                 options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
             });
 
-            services.Configure<ForwardedHeadersOptions>(options => {
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
                 options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
             });
 
@@ -125,7 +137,8 @@ namespace PresentationLayer
                 });
             });
 
-            services.AddSignalR(config => {
+            services.AddSignalR(config =>
+            {
                 config.EnableDetailedErrors = true;
                 config.ClientTimeoutInterval = TimeSpan.FromSeconds(60);
                 config.KeepAliveInterval = TimeSpan.FromSeconds(30);
@@ -133,25 +146,54 @@ namespace PresentationLayer
 
             services.AddSession();
             services.AddHttpContextAccessor();
+            services.AddLocalization();
+            services.AddRazorPages().AddViewLocalization();
             services.AddMvc();
         }
 
+        /// <summary>
+        /// The Configure
+        /// </summary>
+        /// <param name="app">The app<see cref="IApplicationBuilder"/></param>
+        /// <param name="env">The env<see cref="IWebHostEnvironment"/></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var supportedCultures = new[] { new CultureInfo("en"), new CultureInfo("es") };
+            var supportedCultures = new[]
+            {
+                new CultureInfo("en"),
+                new CultureInfo("es"),
+                new CultureInfo("ca"),
+                new CultureInfo("pt")
+            };
+
             var locOptions = new RequestLocalizationOptions
             {
                 DefaultRequestCulture = new RequestCulture("en"),
-                SupportedCultures = new[] { new CultureInfo("en"), new CultureInfo("es") },
-                SupportedUICultures = new[] { new CultureInfo("en"), new CultureInfo("es") }
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
             };
-            
-            locOptions.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(context =>
+
+            // Proveedor personalizado que respeta la cookie
+            locOptions.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context =>
             {
-                ProviderCultureResult result = new ProviderCultureResult("en");     // Determined culture result
-                return Task.FromResult<ProviderCultureResult?>(result);             // Explicitly returning a nullable type
+                // Verificar la cookie primero
+                var cookieProvider = new CookieRequestCultureProvider();
+                var cultureResult = await cookieProvider.DetermineProviderCultureResult(context);
+
+                // Si la cookie no existe, devuelve la cultura predeterminada
+                return cultureResult ?? new ProviderCultureResult("en");
             }));
+
             app.UseRequestLocalization(locOptions);
+
+            var assembly = typeof(Resources.BasicResources).Assembly;
+            var resourceNames = assembly.GetManifestResourceNames();
+
+            Console.WriteLine("Embedded Resources in Assembly:");
+            foreach (var resourceName in resourceNames)
+            {
+                Console.WriteLine(resourceName);
+            }
 
             Logger logger = LogManager.GetLogger("");                                   // Get NLog logger
             LogManager.Configuration.Variables["LoggerFileName"] = "Codis365Backend";   // Set NLog filename pre/suffix
@@ -173,11 +215,11 @@ namespace PresentationLayer
             }
             else
             {
+                app.UseResponseCompression();
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 
-            app.UseResponseCompression();
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.All,
@@ -223,6 +265,7 @@ namespace PresentationLayer
                 CultureInfo.CurrentCulture = new CultureInfo("en");
                 CultureInfo.CurrentUICulture = new CultureInfo("en");
 
+                context.Response.Headers.Add("Content-Type", "text/html; charset=utf-8");
                 await next();
             });
 

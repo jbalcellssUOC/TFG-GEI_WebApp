@@ -4,6 +4,20 @@
 		<script src="https://accounts.google.com/gsi/client" async defer onerror="handleError()"></script>
 </head>
 
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value?.SupportedUICultures != null 
+    ? LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name })
+        .ToList()
+    : new List<SelectListItem>();
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/flags.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/dd.css" />
+</head>
+
 <!DOCTYPE HTML>
 <html>
 <body>
@@ -17,20 +31,32 @@
 		  					<img src="~/lib/login/images/codis365.jpg" alt="Codis365 Logo" height="120">
 						</span>
 
-						<span class="login100-form-title p-b-50">
-							Sign in with your email
+						<span class="login100-form-title p-b-10">
+							@Localizer["login.LoginText"]
 						</span>
 
-						<div id="usernameDiv" class="wrap-input100 m-b-30" data-validate = "Invalid email address, please provide a valid address in the format: email@domain.com">
-							<input asp-for="Username" id="Username" class="input100" type="email" title="Please provide a valid email address in the format: email@domain.com">
+						<div class="language-form p-b-30">
+							<select name="cultureUI" id="cultureNavTop" class="form-control selectpicker" 
+									style="width:150px;position:relative!important; border:none;" 
+									asp-for="@requestCulture!.RequestCulture.UICulture.Name"
+									onchange="changeLanguage(this)">
+								<option value="en" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag us" data-title="EN">English</option>
+								<option value="es" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag es" data-title="ES">Espa&ntilde;ol</option>
+								<option value="ca" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag catalonia" data-title="CA">Catal&agrave;</option>
+								<option value="pt" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag pt" data-title="PT">Portugu&ecirc;s</option>
+							</select>
+						</div>
+
+						<div id="usernameDiv" class="wrap-input100 m-b-30" data-validate = '@Localizer["login.InvalidEmail"]'>
+							<input asp-for="Username" id="Username" class="input100" type="email" title=@Localizer["login.Provide"]>
 							<span class="focus-input100" data-placeholder="Email"></span>
 						</div>
 
-						<div id="passwordDiv" class="wrap-input100" data-validate="Enter a valid password with the following pattern: Minimum 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character.">
+						<div id="passwordDiv" class="wrap-input100" data-validate='@Localizer["login.PatternError"]'>
 							<span class="btn-show-pass">
 								<i class="zmdi zmdi-eye"></i>
 							</span>
-							<input asp-for="Password" id="Password" class="input100" type="password" name="Password" autocomplete="current-password" title="Password must contain at least 8 characters, including 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.">
+							<input asp-for="Password" id="Password" class="input100" type="password" name="Password" autocomplete="current-password" title='@Localizer["login.PatternError"]'>
 							<span class="focus-input100" data-placeholder="Password"></span>
 						</div>
 
@@ -67,20 +93,20 @@
 						<div class="text-center p-t-20">
 						  <label class="txt1">
 								<input asp-for="KeepSigned" id="KeepSigned" type="checkbox" name="KeepSigned" class="checkkeep" onchange="saveKeepSignedState()">
-							Keep me signed in
+								@Localizer["login.KeepSigned"]
 						  </label>
 						</div>
 
 						<div class="text-center p-t-15">
 							<a class="txt2" href="@Url.Action("PasswordRecovery", "SignIn")">
-								Forgot your password?
+								@Localizer["login.ForgotPassword"]
 								<i class="fa fa-share-square-o" aria-hidden="true"></i>
 							</a>
 						</div>
 
 						<div class="text-center p-t-1">
 							<a class="txt2" href="@Url.Action("CreateAccount", "SignIn")">
-								Create an account to use Codis365 services 
+								@Localizer["login.CreateAccount"]
 								<i class="fa fa-external-link-square" aria-hidden="true"></i>
 							</a>
 						</div>
@@ -109,13 +135,19 @@
 </body>
 </html>
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/msdropdown/jquery.dd.min.js"></script>
+
+
 <script>
+
 	iLabSpinner = Rats.UI.LoadAnimation.start();
 	iLabSpinner.stop();
 	loadKeepSignedState();
 
-
 	$(document).ready(function () {
+        $("#cultureNavTop").msDropdown();
+        $("#cultureNavTop_msdd").css("display", "block");
 		$('#loaderlayout').css("display", "none");
 		iLabSpinner.stop();
 	});
@@ -153,6 +185,27 @@
 	}
 
 	document.addEventListener('DOMContentLoaded', function() {
+
+		const urlParams = new URLSearchParams(window.location.search);
+		const returnUrl = urlParams.get("ReturnUrl");
+		let cultureUI = urlParams.get("cultureUI");
+		console.log("cultureUI (directo de URL):", cultureUI);
+		if (!cultureUI && returnUrl) {
+			const decodedReturnUrl = decodeURIComponent(returnUrl);
+			const queryIndex = decodedReturnUrl.indexOf("?");
+			if (queryIndex !== -1) {
+				const innerQueryString = decodedReturnUrl.substring(queryIndex + 1); // Todo lo que sigue al "?"
+				const innerParams = new URLSearchParams(innerQueryString);
+				cultureUI = innerParams.get("cultureUI");
+			}
+		}
+
+		if (cultureUI) {
+			const selectElement = document.getElementById("cultureNavTop");
+			if (selectElement) {
+				selectElement.value = cultureUI;
+			}
+		}
 
 		var validationSummary = document.querySelector('div[asp-validation-summary="All"]');
 		if (validationSummary) {
@@ -201,4 +254,11 @@
 		checkbox.checked = checked;
 	}
 
+    function changeLanguage(selectElement) {
+        const selectedLanguage = selectElement.value;
+        const baseUrl = window.location.pathname;
+        const url = `/Settings/SetLanguage?cultureUI=${selectedLanguage}&returnUrl=${encodeURIComponent(baseUrl)}`;
+		console.log("selectedLanguage", selectElement, selectedLanguage, baseUrl, url)
+        window.location.href = url;
+    }
 </script>

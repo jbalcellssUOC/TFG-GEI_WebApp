@@ -47,5 +47,16 @@ namespace PresentationLayer.Controllers
             return View(UserProfile);
         }
 
+        /// <summary>
+        /// Catalog
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Catalog()
+        {
+            DashboardUserProfileDTO UserProfile = ProfileService.GetUserProfile(ClaimsService.GetClaimValue("UserId"));
+
+            return View(UserProfile);
+        }
+
     }
 }

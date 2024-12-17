@@ -37,8 +37,8 @@ namespace PresentationLayer.Controllers
     [Route("[controller]/[action]")]
     public class SignInController(
 		IHttpContextAccessor HttpContextAccessor, 
-		IAuthService AuthService, 
-		IStringLocalizer<BasicResources> LocalizeString
+		IAuthService AuthService,
+        IStringLocalizer<BasicResources> LocalizeString
         ) : Controller
     {
         private readonly static Logger Logger = LogManager.GetCurrentClassLogger();
@@ -159,7 +159,7 @@ namespace PresentationLayer.Controllers
                 await AuthService.ResetUserRetries(Username!);
                 ClaimsIdentity identity = AuthService.CreateClaimsIdentity(Username!);
                 identity.AddClaim(new Claim(ClaimTypes.Name, Username!));
-                identity.AddClaim(new Claim("UserId", Username!)); 
+                identity.AddClaim(new Claim("UserId", Username!));
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity), new AuthenticationProperties { IsPersistent = KeepSigned });
 
                 return true;
