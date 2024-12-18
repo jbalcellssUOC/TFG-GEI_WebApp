@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Product Inventory";
+        ViewData["Title"] = @Localizer["integration.Inventory"];
 }
 
 <link rel="stylesheet" href="~/css/views/analytics.css" asp-append-version="true" />
@@ -7,16 +7,16 @@
 
 <div class="row wrapper white-bg page-heading">
     <div class="col-lg-12">
-        <h2>Inventory Overview</h2>
+        <h2>@Localizer["integration.InventoryOverview"]</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a>Integration</a>
+                <a>@Localizer["integration.Integration"]</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Inventory</strong>
+                <strong>@Localizer["integration.Inventory"]</strong>
             </li>
         </ol>
     </div>
@@ -30,23 +30,25 @@
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>Inventory</h5>
+                    <h5>@Localizer["integration.Inventory"]</h5>
                 </div>
                 <div class="ibox-content">
+                    <img src="/images/coming_soon.jpg" height="150"/>
+                    <br /><br /><br /><br />
                     <div class="row" style="padding-left: 10px;">
                         <p>
-                            <strong>Coming Soon:</strong>
+                            <strong>@Localizer["working.Txt0"]</strong>
                             <br />
                             <br />
-                            We're excited to announce that we are currently working on an Integration section (Product Inventory) for our platform! This new feature is designed to enhance your experience by providing seamless connections between Codis365 and other tools and services you use.
+                            @Localizer["working.Txt1"]
                         </p>
                         <p>
-                            <strong>Stay Tuned:</strong>
+                            <strong>@Localizer["working.Txt2"]</strong>
                             <br />
                             <br />
-                            We appreciate your patience and excitement as we prepare to roll out this new feature. Stay tuned for updates, and we look forward to enhancing your Codis365 experience with powerful integration capabilities.
+                            @Localizer["working.Txt3"]
                             <br />
-                            Thank you for being a part of our community. We are eager to bring you these new functionalities that will help take your productivity to the next level!
+                            @Localizer["working.Txt4"]
                         </p>
                     </div>
                 </div>

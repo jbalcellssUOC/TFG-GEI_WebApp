@@ -1,3 +1,17 @@
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value?.SupportedUICultures != null 
+    ? LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name })
+        .ToList()
+    : new List<SelectListItem>();
+}
+
 <style>
     .dropdown-alerts{
         left: -280px;
@@ -5,22 +19,45 @@
     }
 </style>
 
+<head>
+    <script src="~/lib/msdropdown/jquery.dd.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/flags.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/dd.css" />
+</head>
+
+
 <div class="row border-bottom">
     <nav class="navbar navbar-fixed-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
             <form role="search" class="navbar-form-custom" method="post" action="">
                 <div class="form-group">
-                    <input type="text" placeholder="Search across Codis365..." class="form-control" name="top-search" id="top-search">
+                    <input type="text" placeholder='@Localizer["topNavBar.Search"]' class="form-control" name="top-search" id="top-search">
                 </div>
             </form>
         </div>
 
         <div style="padding:20px">
-            <span class="m-r-sm text-muted welcome-message" data-i18n="topnav.welcometext"><strong>Welcome to the Codis365 Backend</strong></span>
+            <span class="m-r-sm text-muted welcome-message" data-i18n="topnav.welcometext"><strong>@Localizer["topNavBar.Welcome"]</strong></span>
         </div>
 
         <ul class="nav navbar-top-links navbar-left">
+
+            <li class="dropdown" id="language" style="text-align:left; margin-right: 5px;">
+                <form id="selectLanguage" method="post" asp-controller="Settings" asp-action="SetLanguage" role="form" asp-route-returnUrl="@Context.Request.Path"
+                      class="form-horizontal">
+                    <select name="cultureUI" id="cultureNavTop" class="form-control selectpicker" 
+                        onchange="this.form.submit();" style="width:135px;position:relative!important; display:none; border:none;" asp-for="@requestCulture!.RequestCulture.UICulture.Name"
+                        onmouseout="this.style.color='#a7b1c2'"
+                        >
+					    <option value="en" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag us" data-title="EN">English</option>
+					    <option value="es" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag es" data-title="ES">Espa&ntilde;ol</option>
+					    <option value="ca" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag catalonia" data-title="CA">Catal&agrave;</option>
+					    <option value="pt" data-image="../../images/msdropdown/icons/blank.gif" data-imagecss="flag pt" data-title="PT">Portugu&ecirc;s</option>
+                    </select>
+                </form>
+            </li>
+
             <li class="dropdown">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                     <i class="fa fa-envelope"></i>  <span class="label label-warning">0</span>
@@ -36,20 +73,32 @@
                     <li>
                         <a href="@Url.Action("IdxNotifications", "Notifications")">
                             <div>
-                                <i class="fa fa-exclamation-circle fa-fw"></i> You have 2 unread Notifications
-                                <span class="float-right text-muted small">4 minutes ago</span>
+                                <i class="fa fa-exclamation-circle fa-fw"></i>@Localizer["topNavBar.UnreadMessages"]
+                                <span class="float-right text-muted small">@Localizer["topNavBar.MessagesTime"]</span>
                             </div>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <li>
-                <a id="logout" href="@Url.Action("Logout", "SignIn")">
-                    <i class="fa fa-sign-out"></i> Logout
+            <li style="width: 150px !important; margin-left: 20px !important; color: #a7b1c2;" 
+                onmouseover="this.style.color='black'" 
+                onmouseout="this.style.color='#a7b1c2'">
+                <a id="logout" href="@Url.Action("Logout", "SignIn")" style="color: #a7b1c2;" 
+                onmouseover="this.style.color='black'" 
+                onmouseout="this.style.color='#a7b1c2'">
+                    <i class="fa fa-sign-out"></i>@Localizer["topNavBar.Logout"]
                 </a>
             </li>
         </ul>
 
     </nav>
 </div>
+
+<script>
+
+    $(document).ready(function () {
+        $("#cultureNavTop").msDropdown();
+        $("#cultureNavTop_msdd").css("display", "block");
+    });
+</script>

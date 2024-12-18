@@ -1,13 +1,14 @@
 ﻿<link rel="stylesheet" href="~/css/views/footer.css" asp-append-version="true" />
+
 <script src="~/js/views/footer.js" asp-append-version="true"></script>
 
 <div class="footer fixed">
     <div class="float-right">
-        <a id="chatLinkb" href="javascript:void(0);"><strong>Support Chat</strong></a>
+        <a id="chatLinkb" href="javascript:void(0);"><strong>@Localizer["footer.SupportChat"]</strong></a>
     </div>
     <div style="align-content: center; display: grid; place-items: center;">
         <div class="content">
-            <strong>UOC, Grau d'Enginyeria Informàtica, Treball Final de Grau, 2024</strong>  <span>(<a href="#" id="licenseLink">MIT License</a>)</span>
+            <strong>@Localizer["footer.Claim"]</strong>  <span>(<a href="#" id="licenseLink">MIT License</a>)</span>
         </div>
     </div>
 </div>
@@ -18,8 +19,8 @@
     <span class="close">&times;</span>
     <h2><strong>MIT License</strong></h2>
     <p>Copyright (c) 2024, jbalcellss@uoc.edu</p>
-    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p> 
-    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
+    <p>@Localizer["createAccount.License1"]</p> 
+    <p>@Localizer["createAccount.License2"]</p>
   </div>
 </div>
 
@@ -30,8 +31,6 @@
             if (chat) chat.click();
         });
     });
-
-    // Get the license modal panel
     var modal = document.getElementById("licenseModal");
     var btn = document.getElementById("licenseLink");
     var span = document.getElementsByClassName("close")[0];

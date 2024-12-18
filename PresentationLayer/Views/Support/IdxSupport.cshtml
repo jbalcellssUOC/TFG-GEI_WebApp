@@ -2,7 +2,7 @@
 @model DashboardUserProfileDTO;
 
 @{
-    ViewData["Title"] = "Support";
+    ViewData["Title"] = @Localizer["support.Title"];
 }
 
 <link rel="stylesheet" href="~/css/views/support.css" asp-append-version="true" />
@@ -10,16 +10,16 @@
 
     <div class="row wrapper white-bg page-heading">
         <div class="col-lg-12">
-            <h2>Support Overview</h2>
+            <h2>@Localizer["support.SupportOverview"]</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="/">Home</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a>Support</a>
+                    <a>@Localizer["support.Support"]</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Support Options</strong>
+                    <strong>@Localizer["support.SupportOptions"]</strong>
                 </li>
             </ol>
         </div>
@@ -33,7 +33,7 @@
                 <div class="ibox ">
 
                     <div class="ibox-title">
-                        <h5>Contact Form</h5>
+                        <h5>@Localizer["support.ContactForm"]</h5>
                     </div>
                     <div class="ibox-content">
                         <form role="form">
@@ -43,7 +43,7 @@
                             </div>                            
                             <br />
                             <div>
-                                <button class="btn btn-sm btn-primary float-right m-t-n-xs" type="submit"><strong>Send request!</strong></button>
+                                <button class="btn btn-sm btn-primary float-right m-t-n-xs" type="submit"><strong>@Localizer["support.SendRequest"]</strong></button>
                                 <label>  </label>
                             </div>
                         </form>
@@ -52,22 +52,100 @@
                 </div>
             </div>
 
-        <div class="col-lg-6">
-            <div class="ibox ">
+            <div class="col-lg-5">
+                <div class="ibox ">
 
-                <div class="ibox-title">
-                    <h5>Support Video Tutorial</h5>
-                </div>
-                <div class="ibox-content">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xJSDAJkBWAQ?si=MAt8cs3F0yiPPkYk" allowfullscreen></iframe>
+                    <div class="ibox-title">
+                        <h5>@Localizer["support.Video"]</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <embed class="embed-responsive-item" src="https://www.youtube.com/embed/RdLaYwqbmlI" allowfullscreen></embed>
+                        </div>
                     </div>
                 </div>
+            </div>
+        
+        </div>
 
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>@Localizer["support.Video"]</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <embed class="embed-responsive-item" src="https://www.youtube.com/embed/RdLaYwqbmlI" allowfullscreen></embed>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>@Localizer["support.Video"]</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <embed class="embed-responsive-item" src="https://www.youtube.com/embed/RdLaYwqbmlI" allowfullscreen></embed>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>@Localizer["support.Video"]</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <embed class="embed-responsive-item" src="https://www.youtube.com/embed/RdLaYwqbmlI" allowfullscreen></embed>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div class="row mt-4">
+            <div class="col-lg-4">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>@Localizer["support.Video"]</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <embed class="embed-responsive-item" src="https://www.youtube.com/embed/RdLaYwqbmlI" allowfullscreen></embed>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>@Localizer["support.Video"]</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <embed class="embed-responsive-item" src="https://www.youtube.com/embed/RdLaYwqbmlI" allowfullscreen></embed>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>@Localizer["support.Video"]</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <embed class="embed-responsive-item" src="https://www.youtube.com/embed/RdLaYwqbmlI" allowfullscreen></embed>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 
 
@@ -91,8 +169,9 @@
                 $('body').hasClass('fullscreen-video') ? $('body').removeClass('fullscreen-video') : $('body').addClass('fullscreen-video')
             });
 
-            var placeholderText1 = 'Please describe the issue you\'re experiencing in Codis365, including any error messages you\'ve seen, the steps leading up to the problem.';
-            var placeholderText2 = 'Thank you for reaching out!';
+            
+            var placeholderText1 = "@Html.Raw(Localizer["support.Placeholder1"])";
+            var placeholderText2 = "@Html.Raw(Localizer["support.Placeholder2"])";
             $('.summernote').summernote('code', '<h3>Support Request Form</h3><p style="color:grey;">' + placeholderText1 + '</p>' + '<p style="color:grey;">' + placeholderText2 + '</p>');
 
             $('.summernote').summernote({

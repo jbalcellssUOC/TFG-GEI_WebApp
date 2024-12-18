@@ -3,6 +3,8 @@ using BusinessLogicLayer.Services;
 using Entities.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using System.Security.Principal;
 
 namespace PresentationLayer.Controllers
 {
@@ -19,6 +21,13 @@ namespace PresentationLayer.Controllers
         {
             var Username = ClaimsService.GetClaimValue("UserId")!;
             DashboardUserProfileDTO UserProfile = ProfileService.GetUserProfile(Username);
+            try
+            {
+                var userDetailsDTO = UserService.GetUserDetails(Username!);
+                ViewBag.Username = userDetailsDTO.Result.Name;
+            }
+            catch { ViewBag.Username = "Username";  }
+            
             ViewBag.UserStats = UserService.GetAllUserStats(Username).Take(5);
 
             return View(UserProfile);

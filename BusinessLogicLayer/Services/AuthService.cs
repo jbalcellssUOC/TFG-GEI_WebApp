@@ -39,8 +39,8 @@ namespace BusinessLogicLayer.Services
         /// <returns></returns>
         public async Task<bool> CheckUserAuth(LoginUserDTO loginUserDTO)
 		{
-            if (!loginUserDTO.AuthToken.IsNullOrEmpty())
-			{
+            if (!string.IsNullOrEmpty(loginUserDTO.AuthToken))
+            {
                 bool result = false;
 
                 // Check user by JWT and OAuth2 Token from Google Auth Services

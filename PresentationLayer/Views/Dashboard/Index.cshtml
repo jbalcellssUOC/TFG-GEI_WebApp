@@ -10,31 +10,30 @@
             <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
-                    <span class="label label-success float-right">Monthly</span>
+                    <span class="label label-success float-right">@Localizer["dashboard.Monthly"]</span>
                         </div>
-                    <h5>Barcode generated</h5>
+                    <h5>@Localizer["dashboard.BarcodeGenerated"]</h5>
                 </div>
                 <div class="ibox-content">
                     <h1 class="no-margins">1.256</h1>
                     <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i></div>
-                    <small>Total barcodes</small>
+                    <small>@Localizer["dashboard.TotalBarcodes"]</small>
                 </div>
             </div>
         </div>
 
         <div class="col-lg-4">
-
             <div class="ibox ">
                 <div class="ibox-title">
                     <div class="ibox-tools">
-                        <span class="label label-info float-right">Annual</span>
+                        <span class="label label-info float-right">@Localizer["dashboard.Annual"]</span>
                     </div>
-                    <h5>Barcode readings</h5>
+                    <h5>@Localizer["dashboard.BarcodeReadings"]</h5>
                 </div>
                 <div class="ibox-content">
                     <h1 class="no-margins">13.215</h1>
                     <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
-                    <small>New readings</small>
+                    <small>@Localizer["dashboard.NewReadings"]</small>
                 </div>
             </div>
 
@@ -44,26 +43,27 @@
             <div class="ibox ">
                 <div class="ibox-title">
                     <div class="ibox-tools">
-                        <span class="label label-primary float-right">Today</span>
+                        <span class="label label-primary float-right">@Localizer["dashboard.Today"]</span>
                         </div>
-                        <h5>Interactions</h5>
+                        <h5>@Localizer["dashboard.Interactions"]</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">2.562</h1>
                         <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i></div>
-                        <small>New interactions</small>
+                        <small>@Localizer["dashboard.NewInteractions"]</small>
                     </div>
                 </div>
         </div>
     </div>
+
     <div class="row" id="sortable-view">
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>QR Analytics</h5>
+                    <h5>@Localizer["dashboard.QRAnalytics"]</h5>
                     <div class="ibox-tools">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-xs btn-white active">Annual</button>
+                            <button type="button" class="btn btn-xs btn-white active">@Localizer["dashboard.Annual"]</button>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                             <ul class="stat-list">
                                 <li>
                                     <h2 class="no-margins">3.348</h2>
-                                    <small>Total QR Read in period</small>
+                                    <small>@Localizer["dashboard.TotalQRPeriod"]</small>
                                     <div class="stat-percent">38% <i class="fa fa-level-up text-navy"></i></div>
                                     <div class="progress progress-mini">
                                         <div style="width: 48%;" class="progress-bar"></div>
@@ -86,7 +86,7 @@
                                 </li>
                                 <li>
                                     <h2 class="no-margins ">2.423</h2>
-                                    <small>QR Reading in last month</small>
+                                    <small>@Localizer["dashboard.TotalQRLastMonth"]</small>
                                     <div class="stat-percent" style="color:red">62% <i class="fa fa-level-down text-navy" style="color:red!important"></i></div>
                                     <div class="progress progress-mini" >
                                         <div style="width: 60%;background-color:red!important" class="progress-bar"></div>
@@ -94,7 +94,7 @@
                                 </li>
                                 <li>
                                     <h2 class="no-margins ">11.276</h2>
-                                    <small>Monthly QR Reading</small>
+                                    <small>@Localizer["dashboard.MonthlyQRReading"]</small>
                                     <div class="stat-percent">19% <i class="fa fa-bolt text-navy"></i></div>
                                     <div class="progress progress-mini">
                                         <div style="width: 22%;" class="progress-bar"></div>
@@ -113,7 +113,7 @@
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <h5>User Last Connections</h5>
+                    <h5>@Localizer["dashboard.UserLastConn"]</h5>
                 </div>
                 <div class="ibox-content">
                     <div class="row" id="sortable-view">
@@ -121,13 +121,13 @@
                         <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
                             <thead>
                                 <tr>
-                                    <th data-hide="Source">Source IPv4</th>
-                                    <th data-hide="username">Username</th>
-                                    <th data-toggle="true">Last access</th>
-                                    <th data-hide="location">Location</th>
-                                    <th data-hide="deviceos">Device OS</th>
-                                    <th data-hide="browser">Device Browser</th>
-                                    <th data-hide="status">Status</th>
+                                    <th data-hide="Source">@Localizer["dashboard.SourceIPv4"]</th>
+                                    <th data-hide="username">@Localizer["dashboard.Username"]</th>
+                                    <th data-toggle="true">@Localizer["dashboard.LastAccess"]</th>
+                                    <th data-hide="location">@Localizer["dashboard.Location"]</th>
+                                    <th data-hide="deviceos">@Localizer["dashboard.DeviceOS"]</th>
+                                    <th data-hide="browser">@Localizer["dashboard.DeviceBrowser"]</th>
+                                    <th data-hide="status">@Localizer["dashboard.Status"]</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -142,7 +142,6 @@
                                         <td>@userStats.DevBrowser</td>
                                         <td>
                                             <a href="#"><i class="fa fa-check text-navy")"></i></a>
-                                            @* fa-times text-danger *@
                                         </td>
                                     </tr>
                                 }
@@ -164,7 +163,6 @@
     </div>
 
 </div>
-
 
 @section Scripts {
     <environment names="Development,Staging,Production">

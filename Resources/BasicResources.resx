@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCOUNT_ERROR1" xml:space="preserve">
+    <value>The user cannot be created. User {0} already exists in the system.</value>
+  </data>
+  <data name="ACCOUNT_ERROR2" xml:space="preserve">
+    <value>Unable to create account for {0}. Please check with support.</value>
+  </data>
+  <data name="LOGIN_ERROR1" xml:space="preserve">
+    <value>Unable to log in, please check your login details.</value>
+  </data>
+  <data name="LOGIN_ERROR2" xml:space="preserve">
+    <value>Unable to log in, please try again later.</value>
+  </data>
+  <data name="LOGIN_ERROR3" xml:space="preserve">
+    <value>Your account has been locked due to multiple unsuccessful login attempts. Please reset your password to regain access.</value>
+  </data>
+  <data name="login.LoginText" xml:space="preserve">
+    <value>Sign in with your email</value>
+  </data>
+  <data name="login.LoginButton" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="login.KeepSigned" xml:space="preserve">
+    <value>Keep me signed in</value>
+  </data>
+  <data name="login.ForgotPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="login.CreateAccount" xml:space="preserve">
+    <value>Create an account to use Codis365 services </value>
+  </data>
+  <data name="createAccount.Info" xml:space="preserve">
+    <value>Please provide a new username and secure password that complies with our security policies.</value>
+  </data>
+  <data name="createAccount.NoAccount" xml:space="preserve">
+    <value>The user account for &lt;strong&gt;{0}&lt;/strong&gt; exist in Codis365. Now you can create a new account with the minimum data and complete your user profile later.</value>
+  </data>
+  <data name="createAccount.Provide" xml:space="preserve">
+    <value>Please provide a name for your account</value>
+  </data>
+  <data name="createAccount.InvalidEmail" xml:space="preserve">
+    <value>Invalid email address, please provide a valid address in the format: email@domain.com</value>
+  </data>
+  <data name="createAccount.ProvideValidEmail" xml:space="preserve">
+    <value>Please provide a valid email address in the format: email@domain.com</value>
+  </data>
+  <data name="createAccount.Pattern" xml:space="preserve">
+    <value>Enter a valid password with the following pattern: Minimum 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character.</value>
+  </data>
+  <data name="createAccount.PatternError" xml:space="preserve">
+    <value>Password must contain at least 8 characters, including 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</value>
+  </data>
+  <data name="createAccount.License" xml:space="preserve">
+    <value>License Terms and Conditions</value>
+  </data>
+  <data name="createAccount.License1" xml:space="preserve">
+    <value>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</value>
+  </data>
+  <data name="createAccount.License2" xml:space="preserve">
+    <value>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
+  </data>
+  <data name="createAccount.PasswordDoNotMatch" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="login.IvalidEmail" xml:space="preserve">
+    <value>Invalid email address, please provide a valid address in the format: email@domain.com</value>
+  </data>
+  <data name="login.ProvideValidEmail" xml:space="preserve">
+    <value>Please provide a valid email address in the format: email@domain.com</value>
+  </data>
+  <data name="createAccount.RepeatPassword" xml:space="preserve">
+    <value>Repeat password</value>
+  </data>
+  <data name="createAccount.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="createAccount.AcceptLicense" xml:space="preserve">
+    <value>I accept the {0}</value>
+  </data>
+  <data name="createAccount.CreateAccount" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+  <data name="login.PatternError" xml:space="preserve">
+    <value>Enter a valid password with the following pattern: Minimum 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character.</value>
+  </data>
+  <data name="passwordRecovery.Title" xml:space="preserve">
+    <value>Create a new password with email address registered in Codis365.</value>
+  </data>
+  <data name="passwordRecovery.PasswordRecovery" xml:space="preserve">
+    <value>Password recovery</value>
+  </data>
+  <data name="passwordRecovery.Provide" xml:space="preserve">
+    <value>Please provide a valid email address in the format: email@domain.com</value>
+  </data>
+  <data name="passwordRecovery.InvalidEmail" xml:space="preserve">
+    <value>Invalid email address, please provide a valid address in the format: email@domain.com</value>
+  </data>
+  <data name="passwordRecovery.Confirmation" xml:space="preserve">
+    <value>You will receive an email in a few seconds with a link to reset your password. This link is valid for 30 minutes. If you are unable to do this within this time, you will have to request a new password change. </value>
+  </data>
+  <data name="passwordChangeOk.Info" xml:space="preserve">
+    <value>Your password has been changed successfully. Please click on the button below to log in again to Codis365.</value>
+  </data>
+  <data name="passwordRecovery.PageTitle" xml:space="preserve">
+    <value>Codis365 - Password Reset</value>
+  </data>
+  <data name="passwordChange.Pagetitle" xml:space="preserve">
+    <value>Codis365 - Change password</value>
+  </data>
+  <data name="passwordChange.Title" xml:space="preserve">
+    <value>Please provide a new secure password that complies with our security policies.</value>
+  </data>
+  <data name="topNavBar.Welcome" xml:space="preserve">
+    <value>Welcome to the Codis365 Backend</value>
+  </data>
+  <data name="topNavBar.UnreadMessages" xml:space="preserve">
+    <value>You have 2 unread Notifications</value>
+  </data>
+  <data name="topNavBar.MessagesTime" xml:space="preserve">
+    <value>4 minutes ago</value>
+  </data>
+  <data name="topNavBar.Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="topNavBar.Search" xml:space="preserve">
+    <value>Search across Codis365...</value>
+  </data>
+  <data name="navigation.Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="navigation.Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="navigation.Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="navigation.Barcodes" xml:space="preserve">
+    <value>Barcodes</value>
+  </data>
+  <data name="navigation.StaticBarcodes" xml:space="preserve">
+    <value>Static Barcodes</value>
+  </data>
+  <data name="navigation.DynamicBarcodes" xml:space="preserve">
+    <value>Dynamic Barcodes</value>
+  </data>
+  <data name="navigation.Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="navigation.Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="navigation.Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="navigation.SupportForm" xml:space="preserve">
+    <value>Support Form</value>
+  </data>
+  <data name="navigation.SettingsAndSecurity" xml:space="preserve">
+    <value>Settings &amp; Security</value>
+  </data>
+  <data name="navigation.Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="navigation.Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="navigation.AnalyticsAndReports" xml:space="preserve">
+    <value>Analytics &amp; Reports</value>
+  </data>
+  <data name="navigation.Integration" xml:space="preserve">
+    <value>Integration</value>
+  </data>
+  <data name="navigation.ProductInventory" xml:space="preserve">
+    <value>Product Inventory</value>
+  </data>
+  <data name="navigation.PriceList" xml:space="preserve">
+    <value>Price List</value>
+  </data>
+  <data name="navigation.Rates" xml:space="preserve">
+    <value>Rates</value>
+  </data>
+  <data name="navigation.Catalog" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="footer.SupportChat" xml:space="preserve">
+    <value>Support Chat</value>
+  </data>
+  <data name="footer.Claim" xml:space="preserve">
+    <value>UOC, Bachelor's Degree in Computer Engineering, Final Degree Project, 2024</value>
+  </data>
+  <data name="dashboard.Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="dashboard.BarcodeGenerated" xml:space="preserve">
+    <value>Barcode generated</value>
+  </data>
+  <data name="dashboard.TotalBarcodes" xml:space="preserve">
+    <value>Total barcodes</value>
+  </data>
+  <data name="dashboard.Annual" xml:space="preserve">
+    <value>Annual</value>
+  </data>
+  <data name="dashboard.BarcodeReadings" xml:space="preserve">
+    <value>Barcode readings</value>
+  </data>
+  <data name="dashboard.NewReadings" xml:space="preserve">
+    <value>New readings</value>
+  </data>
+  <data name="dashboard.Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="dashboard.Interactions" xml:space="preserve">
+    <value>Interactions</value>
+  </data>
+  <data name="dashboard.NewInteractions" xml:space="preserve">
+    <value>New interactions</value>
+  </data>
+  <data name="dashboard.QRAnalytics" xml:space="preserve">
+    <value>QR Analytics</value>
+  </data>
+  <data name="dashboard.TotalQRPeriod" xml:space="preserve">
+    <value>Total QR Read in period</value>
+  </data>
+  <data name="dashboard.TotalQRLastMonth" xml:space="preserve">
+    <value>QR Reading in last month</value>
+  </data>
+  <data name="dashboard.MonthlyQRReading" xml:space="preserve">
+    <value>Monthly QR Reading</value>
+  </data>
+  <data name="dashboard.UserLastConn" xml:space="preserve">
+    <value>dashboard.UserLastConn</value>
+  </data>
+  <data name="dashboard.SourceIPv4" xml:space="preserve">
+    <value>Source IPv4</value>
+  </data>
+  <data name="dashboard.Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="dashboard.LastAccess" xml:space="preserve">
+    <value>Last access</value>
+  </data>
+  <data name="dashboard.Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="dashboard.DeviceOS" xml:space="preserve">
+    <value>Device OS</value>
+  </data>
+  <data name="dashboard.DeviceBrowser" xml:space="preserve">
+    <value>Device browser</value>
+  </data>
+  <data name="dashboard.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="chat.SupportStaff" xml:space="preserve">
+    <value>Support Staff #</value>
+  </data>
+  <data name="support.SupportOptions" xml:space="preserve">
+    <value>Support Options</value>
+  </data>
+  <data name="support.Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="support.SupportOverview" xml:space="preserve">
+    <value>Support Overview</value>
+  </data>
+  <data name="support.SendRequest" xml:space="preserve">
+    <value>Send request!</value>
+  </data>
+  <data name="support.Video" xml:space="preserve">
+    <value>Support Video Tutorial</value>
+  </data>
+  <data name="support.Placeholder1" xml:space="preserve">
+    <value>Please describe the issue you are experiencing in Codis365, including any error messages you have seen and the steps leading up to the problem.</value>
+  </data>
+  <data name="support.Placeholder2" xml:space="preserve">
+    <value>Thank you for reaching out!</value>
+  </data>
+  <data name="support.ContactForm" xml:space="preserve">
+    <value>Contact Form</value>
+  </data>
+  <data name="settings.Title" xml:space="preserve">
+    <value>App Settings</value>
+  </data>
+  <data name="support.Title" xml:space="preserve">
+    <value>Codis365 - Support</value>
+  </data>
+  <data name="settings.SettingsOverview" xml:space="preserve">
+    <value>Settings Overview</value>
+  </data>
+  <data name="settings.SettingsAndSecurity" xml:space="preserve">
+    <value>Settings &amp; Security</value>
+  </data>
+  <data name="settings.Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settings.WebUserProfile" xml:space="preserve">
+    <value> profile is designed for individuals who interact with Codis365 services primarily through a web interface. This profile caters to users who require access to our comprehensive suite of online tools for managing transactions efficiently.</value>
+  </data>
+  <data name="settings.APIUserProfile" xml:space="preserve">
+    <value> profile is tailored for developers and technical teams who integrate and interact with Codis365 services programmatically through APIs. This profile enables advanced customization and automation capabilities.</value>
+  </data>
+  <data name="settings.ProfileType" xml:space="preserve">
+    <value>Profile Type: </value>
+  </data>
+  <data name="settings.Products" xml:space="preserve">
+    <value> Products</value>
+  </data>
+  <data name="settings.QRReadings" xml:space="preserve">
+    <value> QR Readings</value>
+  </data>
+  <data name="settings.Interactions" xml:space="preserve">
+    <value> Interactions</value>
+  </data>
+  <data name="settings.UserProfile" xml:space="preserve">
+    <value>User Profile</value>
+  </data>
+  <data name="settings.SaveData" xml:space="preserve">
+    <value>Save Data</value>
+  </data>
+  <data name="settings.GRDP" xml:space="preserve">
+    <value>GDPR Compliance Form</value>
+  </data>
+  <data name="settings.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="settings.Surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="settings.grdp1" xml:space="preserve">
+    <value>I consent to the processing of my personal data in accordance with the &lt;strong&gt;GDPR&lt;/strong&gt; requirements.</value>
+  </data>
+  <data name="settings.grdp2" xml:space="preserve">
+    <value>I agree to receive &lt;cite&gt;&lt;strong&gt;marketing communications and promotional offers&lt;/cite&gt;&lt;/strong&gt;.</value>
+  </data>
+  <data name="settings.AplicationsSettings" xml:space="preserve">
+    <value>Aplications Settings</value>
+  </data>
+  <data name="settings.Setting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="settings.Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="settings.Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="settings.LastUpdate" xml:space="preserve">
+    <value>Last Update</value>
+  </data>
+  <data name="settings.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="settings.IdleTimeout" xml:space="preserve">
+    <value>IdleTimeout</value>
+  </data>
+  <data name="settings.IdleTimeoutTxt" xml:space="preserve">
+    <value>Refers to the time before a user's session is automatically terminated due to inactivity.</value>
+  </data>
+  <data name="settings.Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="settings.NotificationEmail" xml:space="preserve">
+    <value>NotificationEmail</value>
+  </data>
+  <data name="settings.NotificationEmailTxt" xml:space="preserve">
+    <value>Manage how and when you receive notifications via email from our application. Customize your preferences to stay informed about important updates, alerts, or events.</value>
+  </data>
+  <data name="settings.NotificationSMS" xml:space="preserve">
+    <value>NotificationSMS</value>
+  </data>
+  <data name="settings.NotificationSMSTxt" xml:space="preserve">
+    <value>Manage how and when you receive notifications via email from our application. Customize your preferences to stay informed about important updates, alerts, or events.</value>
+  </data>
+  <data name="settings.Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="settings.Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="security.Title" xml:space="preserve">
+    <value>Codis365 - Security</value>
+  </data>
+  <data name="security.Secret" xml:space="preserve">
+    <value>Private secret key used by the server to sign the token.</value>
+  </data>
+  <data name="security.SecurityOverview" xml:space="preserve">
+    <value>Security Overview</value>
+  </data>
+  <data name="security.SettingsAndSecurity" xml:space="preserve">
+    <value>Settings &amp; Security</value>
+  </data>
+  <data name="settings.Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="security.ProfileSecurity" xml:space="preserve">
+    <value>Change your password.</value>
+  </data>
+  <data name="security.CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="security.NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="security.RepeatPassword" xml:space="preserve">
+    <value>Repeat Password</value>
+  </data>
+  <data name="security.ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="security.PasswordLink" xml:space="preserve">
+    <value>Send Change Password Link.</value>
+  </data>
+  <data name="security.SendLink" xml:space="preserve">
+    <value>Send Link</value>
+  </data>
+  <data name="security.Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="security.APISecurityToken" xml:space="preserve">
+    <value>API Security Token</value>
+  </data>
+  <data name="security.CreatedOn" xml:space="preserve">
+    <value>Created on</value>
+  </data>
+  <data name="notifications.Title" xml:space="preserve">
+    <value>Codis365 - Notifications</value>
+  </data>
+  <data name="notifications.Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="notifications.Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="notifications.From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="notifications.Received" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="notifications.CompleteYour" xml:space="preserve">
+    <value>Complete Your Profile Now!</value>
+  </data>
+  <data name="notifications.CompleteYourTxt1" xml:space="preserve">
+    <value>Welcome to our community! To make the most out of your experience and unlock all the features we have to offer, we need just a little more information from you. Complete your profile now to access exclusive content, personalized recommendations, and more. Let’s get started</value>
+  </data>
+  <data name="notifications.CompleteYourTxt2" xml:space="preserve">
+    <value>We're excited to see what you achieve with full access! If you need any help along the way, our support team is just a click away.</value>
+  </data>
+  <data name="notifications.CompleteYourTxt3" xml:space="preserve">
+    <value>Best regards,&lt;br /&gt;The Codis365 Services Team</value>
+  </data>
+  <data name="notifications.Unread" xml:space="preserve">
+    <value>Unread</value>
+  </data>
+  <data name="notifications.Read" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="notifications.CompleteYourFB" xml:space="preserve">
+    <value>Complete Your Profile to Unlock Full Benefits!</value>
+  </data>
+  <data name="notifications.CompleteYourFB1" xml:space="preserve">
+    <value>Welcome to our community! To make the most out of your experience and unlock all the features we have to offer, we need just a little more information from you. Complete your profile now to access exclusive content, personalized recommendations, and more. Let’s get started!</value>
+  </data>
+  <data name="notifications.CompleteYourFB2" xml:space="preserve">
+    <value>We're excited to see what you achieve with full access! If you need any help along the way, our support team is just a click away.</value>
+  </data>
+  <data name="notifications.CompleteYourFB3" xml:space="preserve">
+    <value>Best regards,&lt;br /&gt;The Codis365 Services Team</value>
+  </data>
+  <data name="notifications.CompleteYourJourney" xml:space="preserve">
+    <value>Welcome to Codis365 Services – Your Journey Begins Here!</value>
+  </data>
+  <data name="notifications.CompleteYourJourneyTxt1" xml:space="preserve">
+    <value>Hello and thank you for choosing Codis365 Services! We're excited to have you onboard and are looking forward to helping you achieve your goals with our cutting-edge solutions. Whether you're looking to enhance your operations, streamline processes, or boost efficiency, our dedicated team is here to support you every step of the way.
+As a Codis365 client, you have access to our suite of innovative services and a support team that genuinely cares about your success. Explore our range of offerings and do not hesitate to reach out with any questions or to request personalized assistance.</value>
+  </data>
+  <data name="notifications.CompleteYourJourneyTxt2" xml:space="preserve">
+    <value>Thank you for trusting us. Let’s make great things happen together!</value>
+  </data>
+  <data name="notifications.CompleteYourJourneyTxt3" xml:space="preserve">
+    <value>Best regards,&lt;br /&gt;The Codis365 Services Team</value>
+  </data>
+  <data name="analytics.Title" xml:space="preserve">
+    <value>Analytics &amp; Reports</value>
+  </data>
+  <data name="analytics.Incoming" xml:space="preserve">
+    <value>Incoming interactions</value>
+  </data>
+  <data name="analytics.Origin" xml:space="preserve">
+    <value>Origin of QR code readings</value>
+  </data>
+  <data name="analytics.Update" xml:space="preserve">
+    <value>analytics.Update</value>
+  </data>
+  <data name="analytics.Most" xml:space="preserve">
+    <value>Most read barcodes</value>
+  </data>
+  <data name="analytics.Historical" xml:space="preserve">
+    <value>All historical records are included</value>
+  </data>
+  <data name="analytics.Analytic" xml:space="preserve">
+    <value>Analytic Report</value>
+  </data>
+  <data name="analytics.NoData" xml:space="preserve">
+    <value>*There is no data to generate reports. Please come back after 24 hours.</value>
+  </data>
+  <data name="analytics.UserStats" xml:space="preserve">
+    <value>User Stats Report</value>
+  </data>
+  <data name="working.Txt1" xml:space="preserve">
+    <value>We're excited to announce that we are currently working on an Integration section (Price List) for our platform! This new feature is designed to enhance your experience by providing seamless connections between Codis365 and other tools and services you use.</value>
+  </data>
+  <data name="working.Txt2" xml:space="preserve">
+    <value>Stay Tuned:</value>
+  </data>
+  <data name="working.Txt3" xml:space="preserve">
+    <value>We appreciate your patience and excitement as we prepare to roll out this new feature. Stay tuned for updates, and we look forward to enhancing your Codis365 experience with powerful integration capabilities.</value>
+  </data>
+  <data name="working.Txt4" xml:space="preserve">
+    <value>We appreciate your patience and excitement as we prepare to roll out this new feature. Stay tuned for updates, and we look forward to enhancing your Codis365 experience with powerful integration capabilities.</value>
+  </data>
+  <data name="working.Txt0" xml:space="preserve">
+    <value>Coming Soon:</value>
+  </data>
+  <data name="integration.RatesList" xml:space="preserve">
+    <value>Rates List</value>
+  </data>
+  <data name="integration.Catalog" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="integration.Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="integration.Prices" xml:space="preserve">
+    <value>Prices</value>
+  </data>
+  <data name="integration.InventoryOverview" xml:space="preserve">
+    <value>Inventory Overview</value>
+  </data>
+  <data name="integration.Integration" xml:space="preserve">
+    <value>Integration</value>
+  </data>
+  <data name="integration.PricesOverview" xml:space="preserve">
+    <value>Prices Overview</value>
+  </data>
+  <data name="integration.CatalogOverview" xml:space="preserve">
+    <value>Catalog Overview</value>
+  </data>
+  <data name="integration.RatesOverview" xml:space="preserve">
+    <value>Rates List Overview</value>
+  </data>
+  <data name="barcodes.Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="barcodes.BarcodesOverview" xml:space="preserve">
+    <value>Barcodes Overview</value>
+  </data>
+  <data name="barcodes.Barcodes" xml:space="preserve">
+    <value>Barcodes</value>
+  </data>
+  <data name="barcodes.BarcodeManagement" xml:space="preserve">
+    <value>Barcodes Management</value>
+  </data>
+  <data name="staticbarcodes.StaticBarcodes" xml:space="preserve">
+    <value>Static Barcodes</value>
+  </data>
+  <data name="staticbarcodes.UserStaticBarcodes" xml:space="preserve">
+    <value>User Static Barcodes</value>
+  </data>
+  <data name="barcodes.Barcode" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="barcodes.Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="barcodes.CreatedOn" xml:space="preserve">
+    <value>Created on</value>
+  </data>
+  <data name="barcodes.Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="barcodes.Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="barcodes.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="barcodes.Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="barcodes.ShortLink" xml:space="preserve">
+    <value>ShortLink</value>
+  </data>
+  <data name="dynamicbarcodes.DynamicBarcodes" xml:space="preserve">
+    <value>Dynamic Barcodes</value>
+  </data>
+  <data name="dynamicbarcodes.UserDynamicBarcodes" xml:space="preserve">
+    <value>User Dynamic Barcodes</value>
+  </data>
+  <data name="support.SupportStaff" xml:space="preserve">
+    <value>Support Staff</value>
+  </data>
+  <data name="support.WroteOn" xml:space="preserve">
+    <value>wrote on</value>
+  </data>
+  <data name="support.SupportPrompt" xml:space="preserve">
+    <value>How can we assist you today with Codis365 services?</value>
+  </data>
+  <data name="support.PreviousButton" xml:space="preserve">
+    <value>Previous conversations</value>
+  </data>
+  <data name="security.Enable2FA" xml:space="preserve">
+    <value>&lt;strong&gt;Enable 2FA&lt;/strong&gt; (Enables two-factor authentication to increase the security of your account and protect it from unauthorized access)</value>
+  </data>
+</root>

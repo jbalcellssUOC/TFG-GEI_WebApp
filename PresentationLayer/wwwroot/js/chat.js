@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('chatSupport').addEventListener('click', function (e) {
-        const chatBox = document.querySelector('.small-chat-box');
+    document.getElementById('chatSupport').addEventListener('click', function () {
         if (isChatBoxActive()) {
             ClearChatMessages();
         }
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.getElementById('sendMessageBtn').addEventListener('click', function (e) {
+    document.getElementById('sendMessageBtn').addEventListener('click', function () {
         sendChatMessage();              // Call the sendChatMessage function
     });
 });
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 var randomStaff = Math.floor(Math.random() * 10) + 1
-var userChatD = "Support Staff #" + randomStaff;
+var userChatD = "[" + SupportStaff + "]" + " #" + randomStaff;
 
 function sendChatMessageFromInput() {
     sendChatMessage();
@@ -110,7 +109,8 @@ function DateToLocalString(currentDate) {
 function WelcomeChatMessage() {
     var currentDate = new Date();
     var currentDateString = DateToLocalString(currentDate);
-    AddChatMessage(userChatD + " wrote on ", false, "How can we assist you today with Codis365 services?", currentDateString, "active");
+    
+    AddChatMessage(userChatD + " " + SupportWroteOn + " ", false, SupportPrompt, currentDateString, "active");
 }
 
 function isChatBoxActive() {
@@ -124,7 +124,7 @@ function InsertPreviousConversationsBtn() {
         <div id="PreviousChatMessages">
             <div class="center">
                 <button id="PreviousChatMessagesBtn" class="btn btn-secondary">
-                    Previous conversations
+                    ${SupportPreviousButton}
                 </button>
             </div>
         </div>
@@ -153,6 +153,7 @@ function PreviousChatMessagesInit() {
         data: _Data,
         datatype: "json",
         success: function (data) {
+            console.log(data);
             if (data != null) {
                 if (data.length > 0) {
                     for (var i = 0; i < data.length; i++) {
@@ -171,8 +172,8 @@ function PreviousChatMessagesInit() {
                 UpdateChatMessagesUnread(data.length);
             }
         },
-        always: function (data) { },
-        error: function (data) { }
+        always: function () { },
+        error: function () { }
     });
 
 }
@@ -181,35 +182,43 @@ var messages = null;
 
 function GetPreviousMessages() {
     var _Data = {};
-    $.ajax({
+    return $.ajax({
         url: "/SupportChat/GetAllUserChatMessages",
         type: "POST",
-        async: false,
+        async: true,
         data: _Data,
         datatype: "json",
         success: function (data) {
+            console.log("GetPreviousMessages", data);
             if (data != null) {
                 messages = data;
+                console.log("GetPreviousMessages Messages", messages);
             }
         },
-        always: function (data) { },
-        error: function (data) { }
+        always: function () { },
+        error: function () { }
     });
 }
 
 function PreviousChatMessagesInitial() {
-    GetPreviousMessages();
-    if (messages != null) {
-        UpdateChatMessagesUnread(messages.length);
-        if (messages.length > 0) InsertPreviousConversationsBtn();
-    }
-        
-    WelcomeChatMessage();
+    GetPreviousMessages().then(function (data) {
+        console.log("GetPreviousMessages", data);
+        if (data != null) {
+            messages = data;
+            console.log("Messages", messages);
+            UpdateChatMessagesUnread(messages.length);
+            if (messages.length > 0) {
+                InsertPreviousConversationsBtn();
+            }
+        }
+        WelcomeChatMessage();
+    }).catch(function (error) {
+        console.error("Error fetching messages", error);
+    });
 }
 
 function PreviousChatMessages() {
-    chatContent.innerHTML = '';         // Clear the chat content
-
+    chatContent.innerHTML = '';
     var _Data = { };
     $.ajax({
         url: "/SupportChat/GetAllUserChatMessages",
@@ -218,7 +227,8 @@ function PreviousChatMessages() {
         data: _Data,
         datatype: "json",
         success: function (data) {
-            if (data != null) {
+            console.error(data)
+            if (data !== null) {
                 if (data.length > 0) {
                     for (var i = 0; i < data.length; i++) {
                         var message = data[i];
@@ -228,16 +238,15 @@ function PreviousChatMessages() {
                     }
                     WelcomeChatMessage();
                     scrollToBottom()
-                }
-                else {
+                }else {
                     WelcomeChatMessage();
                     scrollToBottom()
                 }
                 UpdateChatMessagesUnread(data.length);
             }
         },
-        always: function (data) { },
-        error: function (data) { }
+        always: function () { },
+        error: function () { }
     });
 }
 
@@ -252,8 +261,8 @@ function sendChatMessage() {
     var currentDate = new Date();
     var currentDateString = DateToLocalString(currentDate);
     if (!messageText.trim()) return;  // Ignore empty messages
-    var userChatS = "User";
-    AddChatMessage(userChatS + " wrote on ", true, messageText, currentDateString, "");
+    var userChatS = SupportUser;
+    AddChatMessage("[" + userChatS + "]" + " " + SupportWroteOn + " ", true, messageText, currentDateString, "");
     document.getElementById('messageText').value = ''; // Clear input field
     connection.invoke('SendChatMessage', userChatS, userChatD, true, messageText, currentDate).catch(err => console.error("Chat Error: ", err.toString()));
     playReceivedMessageSound();
